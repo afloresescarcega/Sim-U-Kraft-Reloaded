@@ -378,39 +378,6 @@ public class GuiMarker extends GuiScreen
                             	letter = "7";
                             }
                             
-                            /*Light Blocks*/
-                            /*else if (iD == Block.getIdFromBlock(SimukraftReloadedBlocks.lightBox) && meta == 0)
-                            {
-                                letter = "À";
-                            }
-                            else if (iD == Block.getIdFromBlock(SimukraftReloadedBlocks.lightBox) && meta == 1)
-                            {
-                                letter = "Æ";
-                            }
-                            else if (iD == Block.getIdFromBlock(SimukraftReloadedBlocks.lightBox) && meta == 2)
-                            {
-                                letter = "Ç";
-                            }
-                            else if (iD == Block.getIdFromBlock(SimukraftReloadedBlocks.lightBox) && meta == 3)
-                            {
-                                letter = "È";
-                            }
-                            else if (iD == Block.getIdFromBlock(SimukraftReloadedBlocks.lightBox) && meta == 4)
-                            {
-                                letter = "Ì";
-                            }
-                            else if (iD == Block.getIdFromBlock(SimukraftReloadedBlocks.lightBox) && meta == 5)
-                            {
-                                letter = "Ð";
-                            }
-                            else if (iD == Block.getIdFromBlock(SimukraftReloadedBlocks.lightBox) && meta == 6)
-                            {
-                                letter = "Ñ";
-                            }
-                            else if (iD == Block.getIdFromBlock(SimukraftReloadedBlocks.lightBox) && meta == 7)
-                            {
-                                letter = "Ò";
-                            }*/
                             else
                             {
                                 letter = (String) key.get(iD + ":" + meta);

@@ -1,0 +1,15 @@
+// pluginManagement must come first per Gradle 8.x contract.
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        maven {
+            name = 'GTNH'
+            url = 'https://nexus.gtnewhorizons.com/repository/public/'
+        }
+    }
+}
+
+// Root project name is pinned so the Gradle project id matches
+// `archivesBaseName` regardless of the checkout directory name
+// (worktrees, forks, zip downloads, etc.).
+rootProject.name = 'ashjacksimukraftreloaded'

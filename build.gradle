@@ -1,63 +1,105 @@
-buildscript {
-    repositories {
-        mavenCentral()
-        maven {
-            name = "forge"
-            url = "http://files.minecraftforge.net/maven"
-        }
-        maven {
-            name = "sonatype"
-            url = "https://oss.sonatype.org/content/repositories/snapshots/"
-        }
-    }
-    dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+// Minecraft 1.7.10 mod build using RetroFuturaGradle (RFG).
+//
+// RFG is a maintained fork of ForgeGradle 1.x that supports modern Gradle (7.6–8.x)
+// and modern JDKs, while still targeting MC 1.7.10. See:
+//   https://github.com/GTNewHorizons/RetroFuturaGradle
+//
+// Forge version: RFG pins its own canonical 1.7.10 Forge build (~10.13.4.1614).
+// The legacy `1.7.10-10.13.2.1291` pin from the ForgeGradle 1.2 era is no longer
+// user-selectable. Source-level Forge API is unchanged for 1.7.10; a small number
+// of raw MCP mapping names (e.g. world.func_147480_a) may need fixups.
+
+plugins {
+    id 'java-library'
+    // RFG 2.0.x ships Java 25 bytecode, which Gradle 8.8's instrumentation
+    // transformer (bundled ASM) cannot read. 1.4.0 is the version pinned in
+    // RFG's own `example/build.gradle.kts` and is compiled against an older
+    // JDK, so it works cleanly with Gradle 8.8 on JDK 21.
+    id 'com.gtnewhorizons.retrofuturagradle' version '1.4.0'
+}
+
+group = 'ashjack.simukraftreloaded'
+version = '1.0.3'
+base {
+    archivesName = 'ashjacksimukraftreloaded'
+}
+
+java {
+    toolchain {
+        // The mod ships as Java 8 bytecode (MC 1.7.10 requirement).
+        // Gradle itself runs on whatever JDK invokes it (17+ for Gradle 8.8);
+        // RFG provisions an 8 toolchain automatically for compile/run tasks.
+        languageVersion = JavaLanguageVersion.of(8)
+        vendor = JvmVendorSpec.AZUL
     }
 }
 
-apply plugin: 'forge'
-
-version = "1.0.3"
-group= "ashjack.simukraftreloaded" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "ashjacksimukraftreloaded"
-
 minecraft {
-    version = "1.7.10-10.13.2.1291"
-    runDir = "eclipse"
+    mcVersion = '1.7.10'
+    // Keep the player username stable across runClient invocations for dev.
+    username = 'Developer'
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    // GTNH Nexus hosts RFG plugin artifacts and curated 1.7.10 deps
+    // (Forge, ForgeSrc, BuildCraft API, etc.).
+    maven {
+        name = 'GTNH'
+        url = 'https://nexus.gtnewhorizons.com/repository/public/'
+    }
+    // CurseMaven is the canonical source of 1.7.10-era mod jars (CoFH Lib,
+    // ExtraUtilities, etc.) that never made it into the GTNH active mirror.
+    maven {
+        name = 'CurseMaven'
+        url = 'https://cursemaven.com'
+        content {
+            includeGroup 'curse.maven'
+        }
+    }
 }
 
 dependencies {
-    // you may put jars on which you depend on in ./libs
-    // or you may define them like so..
-    //compile "some.group:artifact:version:classifier"
-    //compile "some.group:artifact:version"
-      
-    // real examples
-    //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
-    //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
+    // TileEntityWindmill integrates with Redstone Flux (CoFH) and the
+    // legacy BuildCraft MJ/redstone engine API. Both are compile-only:
+    // at runtime these mods are optional — the mod soft-depends on them.
+    //
+    //   cofh-lib-220333:2388748 → cofh.api.energy.* (RF API for 1.7.10)
+    //   BuildCraft 7.1.49-pre   → buildcraft.api.power.IEngine /
+    //                             IRedstoneEngineReceiver (api classifier)
+    compileOnly 'curse.maven:cofh-lib-220333:2388748'
+    compileOnly 'com.github.GTNewHorizons:BuildCraft:7.1.49-pre:api'
 
-    // for more info...
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
-
+    testImplementation 'junit:junit:4.13.2'
 }
 
-processResources
-{
-    // this will ensure that this task is redone when the versions change.
-    inputs.property "version", project.version
-    inputs.property "mcversion", project.minecraft.version
+// Modern javac defaults to the platform encoding (UTF-8 on 18+); pin it
+// explicitly so no source file silently reverts to ISO-8859-1 on Windows
+// dev boxes or gets misread on CI.
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
 
-    // replace stuff in mcmod.info, nothing else
-    from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
-                
-        // replace version and mcversion
-        expand 'version':project.version, 'mcversion':project.minecraft.version
+// Substitute ${version} / ${mcversion} placeholders in mcmod.info at build time.
+// Matches the behaviour of the old ForgeGradle 1.2 processResources block.
+processResources {
+    inputs.property 'version', project.version
+    inputs.property 'mcversion', minecraft.mcVersion.get()
+
+    filesMatching('mcmod.info') {
+        expand([
+            version  : project.version.toString(),
+            mcversion: minecraft.mcVersion.get()
+        ])
     }
-        
-    // copy everything else, thats not the mcmod.info
-    from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
+}
+
+// Expose standard JUnit platform (JUnit 4 runs under JUnit Platform Vintage Engine
+// if we wanted it, but plain JUnit 4 also works with Gradle's built-in junit runner).
+test {
+    useJUnit()
+    testLogging {
+        events 'passed', 'skipped', 'failed'
     }
 }
