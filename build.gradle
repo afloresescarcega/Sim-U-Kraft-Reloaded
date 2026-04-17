@@ -11,6 +11,10 @@
 
 plugins {
     id 'java-library'
+    id 'jacoco'
+    // Sonar Scanner Gradle plugin. 5.x supports Gradle 7.3+ and runs in the
+    // outer Gradle JVM (JDK 17+), independent of the MC Java 8 toolchain.
+    id 'org.sonarqube' version '5.1.0.4882'
     // RFG 2.0.x ships Java 25 bytecode, which Gradle 8.8's instrumentation
     // transformer (bundled ASM) cannot read. 1.4.0 is the version pinned in
     // RFG's own `example/build.gradle.kts` and is compiled against an older
@@ -68,8 +72,8 @@ dependencies {
     //   cofh-lib-220333:2388748 → cofh.api.energy.* (RF API for 1.7.10)
     //   BuildCraft 7.1.49-pre   → buildcraft.api.power.IEngine /
     //                             IRedstoneEngineReceiver (api classifier)
-    compileOnly 'curse.maven:cofh-lib-220333:2388748'
-    compileOnly 'com.github.GTNewHorizons:BuildCraft:7.1.49-pre:api'
+    implementation 'curse.maven:cofh-lib-220333:2388748'
+    implementation 'com.github.GTNewHorizons:BuildCraft:7.1.49-pre:api'
 
     testImplementation 'junit:junit:4.13.2'
 }
@@ -101,5 +105,34 @@ test {
     useJUnit()
     testLogging {
         events 'passed', 'skipped', 'failed'
+    }
+    finalizedBy jacocoTestReport
+}
+
+// JaCoCo — produces the XML report SonarQube Cloud ingests for coverage.
+jacoco {
+    toolVersion = '0.8.11'
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = true
+        html.required = true
+    }
+}
+
+// SonarQube Cloud (US region) analysis. SONAR_TOKEN is supplied by CI.
+sonar {
+    properties {
+        property 'sonar.host.url', 'https://sonarqube.us'
+        property 'sonar.organization', 'afloresescarcega-org'
+        property 'sonar.projectKey', 'afloresescarcega_Sim-U-Kraft-Reloaded'
+        property 'sonar.projectName', 'Sim-U-Kraft-Reloaded'
+        property 'sonar.sources', 'src/main/java'
+        property 'sonar.tests', 'src/test/java'
+        property 'sonar.java.source', '8'
+        property 'sonar.coverage.jacoco.xmlReportPaths',
+                "${layout.buildDirectory.get()}/reports/jacoco/test/jacocoTestReport.xml"
     }
 }
