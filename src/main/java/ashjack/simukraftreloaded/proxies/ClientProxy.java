@@ -83,13 +83,13 @@ public class ClientProxy extends CommonProxy
         }
 
         //System.out.println("Saving object "+o.toString());
-        try
-        {
+        try (
             FileOutputStream fos = new FileOutputStream(filename);
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            ObjectOutputStream oos = new ObjectOutputStream(fos)
+        )
+        {
             oos.writeObject(o);
             oos.flush();
-            oos.close();
         }
         catch (Exception e)
         {

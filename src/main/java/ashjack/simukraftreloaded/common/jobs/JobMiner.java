@@ -23,12 +23,10 @@ import net.minecraft.item.ItemStack;
 public class JobMiner extends Job implements Serializable
 {
 
-    public Vocation vocation = null;
     public FolkData theFolk = null;
     public Stage theStage;
     transient public int runDelay = 1000;
     transient public long timeSinceLastRun = 0;
-    private transient int step = 1;
     private long timeSinceLastChestFullMessage=0;
 
     transient Long timeSinceLastGoto = 0l;
@@ -310,7 +308,7 @@ public class JobMiner extends Job implements Serializable
                 }
 
                 theFolk.stayPut = true;
-                theFolk.beamMeTo(vNextMineableBlock.clone());
+                theFolk.beamMeTo(vNextMineableBlock.copy());
                 step = 2;
             }
         }
@@ -327,7 +325,7 @@ public class JobMiner extends Job implements Serializable
     // TODO: never hits this, need to beam them back up before sunset
     private void stageBeamingUp()
     {
-        theFolk.beamMeTo(theFolk.employedAt.clone());
+        theFolk.beamMeTo(theFolk.employedAt.copy());
         theStage = Stage.IDLE;
         theFolk.action = FolkAction.WANDER;
         SimukraftReloaded.sendChat(theFolk.name
@@ -550,7 +548,7 @@ public class JobMiner extends Job implements Serializable
                                                              vMineable.z.intValue());
                             
                             if (ftb % 10==0 && btt==Math.floor(theMiningBox.size/2) && ltr==0) {
-                            	V3 lightbox=vMineable.clone();
+                            	V3 lightbox=vMineable.copy();
                             	
                             	if (mineHorizontalDir.contentEquals("+x"))
                                 {
@@ -634,7 +632,7 @@ public class JobMiner extends Job implements Serializable
                 return;
             }
 
-            vNextMineableBlock = vMineable.clone();
+            vNextMineableBlock = vMineable.copy();
         } // end of horizontal mining code
     }
 

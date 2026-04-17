@@ -386,11 +386,12 @@ public class SimukraftReloaded
 		log.info("Downloading file " + url);
         url = url.replace(" ", "%20");
         
-        try
-        {
+        try (
             java.io.BufferedInputStream in = new java.io.BufferedInputStream(new java.net.URL(url).openStream());
-			java.io.FileOutputStream fos = new java.io.FileOutputStream(localFile);
-            java.io.BufferedOutputStream bout = new BufferedOutputStream(fos, 1024);
+            java.io.FileOutputStream fos = new java.io.FileOutputStream(localFile);
+            java.io.BufferedOutputStream bout = new BufferedOutputStream(fos, 1024)
+        )
+        {
             byte[] data = new byte[4096];
             int x = 0;
 
@@ -401,8 +402,6 @@ public class SimukraftReloaded
 
             bout.flush();
             ret = new String(data);
-            bout.close();
-            in.close();
         }
         catch (Exception e)
         {
@@ -686,7 +685,7 @@ public class SimukraftReloaded
         Commodity.refreshAvailableCommoditities();
     }
 
-    public static void demolishBlocks()
+    public static void processDemolishQueue()
     {
         if (demolishBlocks.size() < 1)
         {
@@ -807,30 +806,25 @@ public class SimukraftReloaded
     
     public static ArrayList<String> loadSK2(String fullFilename) {
     	ArrayList<String> ret=new ArrayList<String>();
-    	try {
-    		BufferedReader br = new BufferedReader(new FileReader(fullFilename));
-
+    	try (BufferedReader br = new BufferedReader(new FileReader(fullFilename))) {
             String line = br.readLine();
 
             while (line != null) {
             	ret.add(line);
                 line = br.readLine();
             }
-            br.close();
-            
+
     	}catch(Exception e) {e.printStackTrace();}
-    	
+
         return ret;
     }
-    
+
     public static void saveSK2(String fullFilename, ArrayList<String> strings) {
-    	try {
-    	BufferedWriter bw=new BufferedWriter(new FileWriter(fullFilename));
+    	try (BufferedWriter bw=new BufferedWriter(new FileWriter(fullFilename))) {
     	for(String line:strings) {
     		bw.write(line+"\r\n");
     	}
-    	bw.close();
-    	
+
     	}catch(Exception e) {e.printStackTrace(); }
     }
 }

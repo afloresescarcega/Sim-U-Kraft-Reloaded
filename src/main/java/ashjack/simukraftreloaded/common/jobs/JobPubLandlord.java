@@ -16,7 +16,6 @@ import net.minecraft.item.ItemStack;
 
 public class JobPubLandlord extends Job{
 
-	 public Vocation vocation = null;
 	 public Stage theStage;
 	 public FolkData theFolk;
 	 transient public int runDelay = 1000;

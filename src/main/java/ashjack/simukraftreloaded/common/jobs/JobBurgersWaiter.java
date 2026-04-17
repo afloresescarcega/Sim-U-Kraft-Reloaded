@@ -24,7 +24,6 @@ public class JobBurgersWaiter extends Job {
 	1=Frycook waypoint
 	2=Waiter waypoint
 	*/
-	public Vocation vocation = null;
     public FolkData theFolk = null;
     public Stage theStage;
     public int runDelay = 1000;

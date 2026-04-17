@@ -21,7 +21,6 @@ import net.minecraft.item.ItemStack;
 
 public class JobEggFarmer extends Job{
 	
-	public Vocation vocation = null;
     public Stage theStage;
     public FolkData theFolk;
     transient public int runDelay = 1000;

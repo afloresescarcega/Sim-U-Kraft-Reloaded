@@ -23,7 +23,6 @@ public class JobBaker extends Job implements Serializable
     private static final long serialVersionUID = -1177112153304279141L;
 
     //general job variables
-    public Vocation vocation = null;
     public Stage theStage;
     public FolkData theFolk;
     transient public int runDelay = 1000;

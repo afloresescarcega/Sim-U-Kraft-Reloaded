@@ -112,8 +112,7 @@ public class Building implements Serializable
         }
     }
 
-    @Override
-    public Building clone() {
+    public Building copy() {
     	Building ret=new Building();
     	ret.displayName=this.displayName;
     	ret.type=this.type;
@@ -125,8 +124,8 @@ public class Building implements Serializable
     	ret.dimensions=this.dimensions;
     	ret.elevationLevel=this.elevationLevel;
     	ret.description=this.description;
-    	try {ret.primaryXYZ=this.primaryXYZ.clone();}catch(Exception e){ret.primaryXYZ=null;}
-    	try {ret.livingXYZ=this.livingXYZ.clone();} catch(Exception e) {ret.livingXYZ=null;}
+    	try {ret.primaryXYZ=this.primaryXYZ.copy();}catch(Exception e){ret.primaryXYZ=null;}
+    	try {ret.livingXYZ=this.livingXYZ.copy();} catch(Exception e) {ret.livingXYZ=null;}
     	ret.buildingComplete=this.buildingComplete;
     	ret.capacity=-1;
     	ret.buildDirection=this.buildDirection;
@@ -203,11 +202,13 @@ public class Building implements Serializable
             }
 
             
-            FileInputStream fstream = new FileInputStream(
-            		SimukraftReloaded.getSimukraftFolder() + "/buildings/" + type
-                + "/" + displayName + ".txt");
-            DataInputStream in = new DataInputStream(fstream);
-            BufferedReader br = new BufferedReader(new InputStreamReader(in));
+            try (
+                FileInputStream fstream = new FileInputStream(
+                        SimukraftReloaded.getSimukraftFolder() + "/buildings/" + type
+                    + "/" + displayName + ".txt");
+                DataInputStream in = new DataInputStream(fstream);
+                BufferedReader br = new BufferedReader(new InputStreamReader(in))
+            ) {
             String strLine;
             strLine = br.readLine().toString().toLowerCase().trim(); // dimensions
             String[] d = strLine.split("x");
@@ -470,9 +471,8 @@ public class Building implements Serializable
                 }
             }
 
-            br.close();
-            in.close();
             this.rent = blocksInBuilding * 0.01f;
+            }
         }
         catch (Exception e)
         {
@@ -899,7 +899,7 @@ public class Building implements Serializable
         	
         	temp="blocklocs|";
         	for(V3 block:this.blockLocations) {
-        		if (block !=null  & block.toString().contains(",")) {
+        		if (block !=null  && block.toString().contains(",")) {
         			temp+=block.toString()+"B";
         		}
         	}
@@ -908,7 +908,7 @@ public class Building implements Serializable
         	if(blockSpecial.size() >0) {
 	        	temp="blockspecial|";
 	        	for(V3 block:this.blockSpecial) {
-	        		if (block !=null  & block.toString().contains(",")) {
+	        		if (block !=null  && block.toString().contains(",")) {
 	        			temp+=block.toString()+","+ block.meta+"B";
 	        		}
 	        	}
@@ -968,7 +968,7 @@ public class Building implements Serializable
                     	try {
 	                    	temp="blocklocs|";
 	                    	for(V3 block:building.blockLocations) {
-	                    		if (block !=null  & block.toString().contains(",")) {
+	                    		if (block !=null  && block.toString().contains(",")) {
 	                    			temp+=block.toString()+"B";
 	                    		}
 	                    	}
@@ -979,7 +979,7 @@ public class Building implements Serializable
 	                    	if(building.blockSpecial.size() >0) {
 	            	        	temp="blockspecial|";
 	            	        	for(V3 block:building.blockSpecial) {
-	            	        		if (block !=null  & block.toString().contains(",")) {
+	            	        		if (block !=null  && block.toString().contains(",")) {
 	            	        			temp+=block.toString()+","+block.meta+"B";
 	            	        		}
 	            	        	}
@@ -1317,7 +1317,7 @@ public class Building implements Serializable
             {
                 if (build.displayName.contentEquals(fullname))
                 {
-                    return build.clone();
+                    return build.copy();
 					
                 }
             }
@@ -1328,7 +1328,7 @@ public class Building implements Serializable
             {
                 if (build.displayName.contentEquals(fullname))
                 {
-                    return build.clone();
+                    return build.copy();
                 }
             }
         }
@@ -1338,7 +1338,7 @@ public class Building implements Serializable
             {
                 if (build.displayName.contentEquals(fullname))
                 {
-                    return build.clone();
+                    return build.copy();
                 }
             }
         }
@@ -1348,7 +1348,7 @@ public class Building implements Serializable
             {
                 if (build.displayName.contentEquals(fullname))
                 {
-                    return build.clone();
+                    return build.copy();
                 }
             }
         }
@@ -1359,7 +1359,7 @@ public class Building implements Serializable
             {
                 if (build.displayName.contentEquals(fullname))
                 {
-                    return build.clone();
+                    return build.copy();
                 }
             }
         }

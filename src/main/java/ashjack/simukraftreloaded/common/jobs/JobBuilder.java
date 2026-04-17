@@ -26,7 +26,6 @@ public class JobBuilder extends Job implements Serializable
 
     public Stage theStage;
     public FolkData theFolk = null;
-    public Vocation vocation = null;
 
     public int runDelay = 1000;
     public long timeSinceLastRun = 0;

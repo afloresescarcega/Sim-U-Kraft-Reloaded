@@ -52,11 +52,12 @@ public class UpdateChecker
         String ret = "";
         url = url.replace(" ", "%20");
         
-        try
-        {
+        try (
             java.io.BufferedInputStream in = new java.io.BufferedInputStream(new java.net.URL(url).openStream());
-			java.io.FileOutputStream fos = new java.io.FileOutputStream(localFile);
-            java.io.BufferedOutputStream bout = new BufferedOutputStream(fos, 1024);
+            java.io.FileOutputStream fos = new java.io.FileOutputStream(localFile);
+            java.io.BufferedOutputStream bout = new BufferedOutputStream(fos, 1024)
+        )
+        {
             byte[] data = new byte[4096];
             int x = 0;
 
@@ -67,8 +68,6 @@ public class UpdateChecker
 
             bout.flush();
             ret = new String(data);
-            bout.close();
-            in.close();
         }
         catch (Exception e)
         {

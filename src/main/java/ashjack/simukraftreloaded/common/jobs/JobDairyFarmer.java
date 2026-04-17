@@ -24,7 +24,6 @@ import net.minecraft.util.AxisAlignedBB;
 
 public class JobDairyFarmer extends Job {
 	
-	public Vocation vocation = null;
     public FolkData theFolk = null;
     public Stage theStage;
     transient public int runDelay = 1000;

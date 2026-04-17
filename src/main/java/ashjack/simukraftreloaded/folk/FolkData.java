@@ -422,7 +422,7 @@ public class FolkData implements Serializable
 
     /** runs client side recivinng updates where this folk actual is - NOT IMPLIMENTED? */
     public void serverToClientLocationUpdate(V3 newLocation) {
-    	this.location=newLocation.clone();
+    	this.location=newLocation.copy();
     	if (this.theEntity !=null) {
     		newLocation.x=Math.floor(newLocation.x)+0.5f;
     		newLocation.z=Math.floor(newLocation.z)+0.5f;
@@ -503,12 +503,12 @@ public class FolkData implements Serializable
 
                     if (this.getHome().livingXYZ != null)
                     {
-                        liveAt = this.getHome().livingXYZ.clone();
+                        liveAt = this.getHome().livingXYZ.copy();
                     }
 
                     if (liveAt == null)
                     {
-                        liveAt = this.getHome().primaryXYZ.clone();
+                        liveAt = this.getHome().primaryXYZ.copy();
                     }
 
                     if (this.location.getDistanceTo(liveAt) > 5 && destination == null
@@ -740,7 +740,7 @@ public class FolkData implements Serializable
                 action = FolkAction.ONWAYTOWORK;
                 SimukraftReloaded.log.warning("FolkData:onUpdate() "+this.name + " is still going to work");
                 this.updateLocationFromEntity();
-                V3 temp=employedAt.clone();
+                V3 temp=employedAt.copy();
                 temp.x+=5;
                 gotoXYZ(temp,GotoMethod.SHIFT);
                 gotoXYZ(employedAt, null);
@@ -832,11 +832,11 @@ public class FolkData implements Serializable
 
                     try
                     {
-                        liveAt = this.getHome().livingXYZ.clone();
+                        liveAt = this.getHome().livingXYZ.copy();
 
                         if (liveAt == null)
                         {
-                            liveAt = this.getHome().primaryXYZ.clone();
+                            liveAt = this.getHome().primaryXYZ.copy();
                         }
                     }
                     catch (Exception e)
@@ -1471,7 +1471,7 @@ public class FolkData implements Serializable
         }
 
         this.stayPut = false;
-        this.destination = whereTo.clone();
+        this.destination = whereTo.copy();
 
         if (this.destination == null)
         {
@@ -1598,7 +1598,7 @@ public class FolkData implements Serializable
             }
 
             try {
-            	this.location = destination.clone();
+            	this.location = destination.copy();
             } catch(Exception e) {} // NPEs when above NPEs
         	this.destination = null;
         }
@@ -1639,7 +1639,7 @@ public class FolkData implements Serializable
         }
 
         timeStartedGotoing = System.currentTimeMillis();
-        V3 whereTo = whereToIn.clone();
+        V3 whereTo = whereToIn.copy();
         World destWorld = MinecraftServer.getServer().worldServerForDimension(whereTo.theDimension);
 
         for (int y = 0; y < 200; y++)
@@ -1668,7 +1668,7 @@ public class FolkData implements Serializable
             return;
         }
 
-        this.destination = whereTo.clone();
+        this.destination = whereTo.copy();
         SimukraftReloaded.log.info("FolkData: BeamMeTo() for " + this.name + " to " + whereTo.toString() + " Dim:" + whereTo.theDimension);
         this.stayPut = true;
 
@@ -1684,7 +1684,7 @@ public class FolkData implements Serializable
 	            //ModSimukraft.proxy.getClientWorld().playSound(whereTo.x, whereTo.y, whereTo.z, "ashjacksimukraftreloaded:beamdown", 1f, 1f, false);
 	        }
 	
-	        this.beamingTo = whereTo.clone(); //setting this will trigger the beaming progress in the tick/game loop
+	        this.beamingTo = whereTo.copy(); //setting this will trigger the beaming progress in the tick/game loop
         } catch(Exception e) {}
     }
 
@@ -1718,7 +1718,7 @@ public class FolkData implements Serializable
                 }
 
                 SimukraftReloaded.log.info("FolkData: doBeaming() complete for " + this.name + " to " + beamingTo.toString() + " (dim " + beamingTo.theDimension + ")");
-                this.location = beamingTo.clone();
+                this.location = beamingTo.copy();
                 this.destination = null;
                 beamingTo = null;
                 respawnEntity(MinecraftServer.getServer().worldServerForDimension(location.theDimension));

@@ -38,7 +38,6 @@ public class JobCropFarmer extends Job implements Serializable
 {
     private static final long serialVersionUID = -1177112214234279141L;
 
-    public Vocation vocation = null;
     public FolkData theFolk = null;
     public Stage theStage;
     transient public int runDelay = 1000;

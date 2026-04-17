@@ -34,7 +34,7 @@ public class GuiCityBox extends GuiScreen
     /** regular constructor */
     public GuiCityBox(V3 location, EntityPlayer thePlayer)
     {
-        this.location = location.clone();
+        this.location = location.copy();
         Building.loadAllBuildings(); //re-load the buildings client side
         theBuilding = Building.getBuilding(location);
         playerWhoClickedIt = thePlayer;

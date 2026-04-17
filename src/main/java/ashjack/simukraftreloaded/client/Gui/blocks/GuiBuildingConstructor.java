@@ -692,7 +692,7 @@ public class GuiBuildingConstructor extends GuiScreen
                 	SimukraftReloaded.theBuildings.remove(selectedBuilding);
                 }
 
-                selectedBuilding.conBoxLocation = this.constructorLoc.clone();
+                selectedBuilding.conBoxLocation = this.constructorLoc.copy();
                 SimukraftReloaded.theBuildings.add(selectedBuilding);
 
                 // Building.saveAllBuildings(); // <-server only

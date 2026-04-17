@@ -48,12 +48,12 @@ public class CommonProxy
     {
         Object o = null;
 
-        try
-        {
+        try (
             FileInputStream fis2 = new FileInputStream(filename);
-            ObjectInputStream in2 = new ObjectInputStream(fis2);
+            ObjectInputStream in2 = new ObjectInputStream(fis2)
+        )
+        {
             o = in2.readObject();
-            in2.close();
         }
         catch (Exception e)
         {
@@ -149,8 +149,7 @@ public class CommonProxy
         {
         }
 
-        @Override
-        public V3 clone()
+        public V3 copy()
         {
             V3 retV = new V3(this.x, this.y, this.z, this.theDimension);
             return retV;

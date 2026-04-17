@@ -102,7 +102,7 @@ public class CommonTickHandler
 
             if (SimukraftReloaded.demolishBlocks.size() > 0) //and demolishing buildings
             {
-            	SimukraftReloaded.demolishBlocks();
+            	SimukraftReloaded.processDemolishQueue();
             }
         }
 

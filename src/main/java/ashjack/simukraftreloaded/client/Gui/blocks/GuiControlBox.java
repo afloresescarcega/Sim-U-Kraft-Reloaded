@@ -49,7 +49,7 @@ public class GuiControlBox extends GuiScreen
     /** regular constructor */
     public GuiControlBox(V3 location, EntityPlayer thePlayer)
     {
-        this.location = location.clone();
+        this.location = location.copy();
         Building.loadAllBuildings(); //re-load the buildings client side
         theBuilding = Building.getBuilding(location);
         playerWhoClickedIt = thePlayer;

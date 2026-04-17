@@ -96,7 +96,7 @@ public class GuiBeamPlayerTo extends GuiScreen
 
         String name = guibutton.displayString.trim();
         V3 v = CourierTask.getCourierPoint(name);
-        V3 safePoint = v.clone();
+        V3 safePoint = v.copy();
         safePoint.y++;
 
         try
@@ -111,7 +111,7 @@ public class GuiBeamPlayerTo extends GuiScreen
         ClientTickHandler.beamingPlayer = thePlayer;
         ClientTickHandler.beamingStage = 1;
         ClientTickHandler.beamingStartedAt = System.currentTimeMillis();
-        ClientTickHandler.beamingTo = safePoint.clone();
+        ClientTickHandler.beamingTo = safePoint.copy();
     }
 
     public GuiButton getButtonWithId(int id)

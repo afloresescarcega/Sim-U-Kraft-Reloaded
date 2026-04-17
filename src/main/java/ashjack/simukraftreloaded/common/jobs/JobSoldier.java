@@ -25,7 +25,6 @@ import net.minecraft.world.World;
 public class JobSoldier extends Job implements Serializable
 {
 
-    public Vocation vocation = null;
     public FolkData theFolk = null;
     public Stage theStage;
     transient public int runDelay = 1000;

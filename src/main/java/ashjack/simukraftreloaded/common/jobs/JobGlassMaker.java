@@ -24,7 +24,6 @@ public class JobGlassMaker extends Job implements Serializable
 {
     private static final long serialVersionUID = 1177111222904279141L;
 
-    public Vocation vocation = null;
     public FolkData theFolk = null;
     public Stage theStage;
     transient public int runDelay = 1000;
@@ -218,7 +217,7 @@ public class JobGlassMaker extends Job implements Serializable
             if (gotoCount > 2)
             {
                 gotoCount = 0;
-                V3 bs = blockOfSand.clone();
+                V3 bs = blockOfSand.copy();
                 bs.y++;
                 theFolk.beamMeTo(bs);
             }
@@ -269,7 +268,7 @@ public class JobGlassMaker extends Job implements Serializable
         {
             if (step == 1)
             {
-                V3 adj = theFolk.employedAt.clone();
+                V3 adj = theFolk.employedAt.copy();
                 adj.y++;
                 theFolk.gotoXYZ(adj, null);
             

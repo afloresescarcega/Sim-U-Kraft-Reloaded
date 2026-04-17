@@ -51,7 +51,6 @@ public class RenderFolk extends RenderBiped
                                double d2, float f, float f1)
     {
         double d3 = d1 - (double) entityliving.yOffset;
-        doRenderLiving(entityliving, d, d3, d2, f, f1);
         doRenderFolk((EntityFolk) entityliving, d, d3, d2, f, f1);
     }
 

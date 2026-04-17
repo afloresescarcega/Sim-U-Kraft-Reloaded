@@ -20,7 +20,6 @@ public class JobCourier extends Job implements Serializable
 {
     private static final long serialVersionUID = -1177112207901844141L;
 
-    public Vocation vocation = null;
     public FolkData theFolk = null;
     public Stage theStage;
     transient public int runDelay = 1000;
@@ -176,7 +175,7 @@ public class JobCourier extends Job implements Serializable
             if (pickup != null)
             {
                 theFolk.statusText = "On my way to " + pickup.name + " (pick-up)";
-                V3 d = pickup.clone();
+                V3 d = pickup.copy();
                 d.y++;
                 theFolk.gotoXYZ(d, GotoMethod.BEAM);
                 onRoute = true;
@@ -271,7 +270,7 @@ public class JobCourier extends Job implements Serializable
     {
         CourierTask task = courierTasks.get(currentTask);
         if ( task !=null && task.dropoff !=null) {
-        	dropoff = task.dropoff.clone();
+        	dropoff = task.dropoff.copy();
         } else {
         	theStage=Stage.ATDEPOT;
         	theFolk.gotoXYZ(theFolk.employedAt, null);
@@ -287,9 +286,9 @@ public class JobCourier extends Job implements Serializable
         if (!onRoute)
         {
             theFolk.statusText = "On my way to " + dropoff.name + " (drop-off)";
-            V3 d = dropoff.clone();
+            V3 d = dropoff.copy();
             if (d==null) {
-            	d=theFolk.employedAt.clone();
+            	d=theFolk.employedAt.copy();
             }
             d.y++;
             theFolk.beamMeTo(d);

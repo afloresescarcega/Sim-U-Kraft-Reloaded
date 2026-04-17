@@ -169,7 +169,7 @@ public class EntityFolk extends EntityCreature implements INpc {
 					Long ls=System.currentTimeMillis()- theData.anyFolkLastSpoke;
 					if (SimukraftReloadedConfig.configFolkTalkingEnglish == true
 							&& ls > 5000) {
-						if ((!theData.greetedToday & dist < 5) || (theData.vocation==Vocation.BURGERSWAITER && dist <5 && r.nextInt(20)==2)) {
+						if ((!theData.greetedToday && dist < 5) || (theData.vocation==Vocation.BURGERSWAITER && dist <5 && r.nextInt(20)==2)) {
 							theData.greetedToday = true;
 							theData.anyFolkLastSpoke = System
 									.currentTimeMillis();

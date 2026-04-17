@@ -100,7 +100,7 @@ public abstract class Job
             }
             else if (dist > 1 && dist < 3)
             {
-                V3 work = theFolk.employedAt.clone();
+                V3 work = theFolk.employedAt.copy();
                 work.y++;
                 theFolk.gotoXYZ(work, GotoMethod.SHIFT);
                 theFolk.location = work;
@@ -868,22 +868,22 @@ public abstract class Job
         	theWorld= MinecraftServer.getServer().worldServerForDimension(startXYZ.theDimension);
         }
         
-        V3 test=startXYZ.clone();
+        V3 test=startXYZ.copy();
         test.x++;
         if (theWorld.isAirBlock(test.x.intValue(), test.y.intValue(), test.z.intValue())) {
         	return test;
         }
-        test=startXYZ.clone();
+        test=startXYZ.copy();
         test.x--;
         if (theWorld.isAirBlock(test.x.intValue(), test.y.intValue(), test.z.intValue())) {
         	return test;
         }
-        test=startXYZ.clone();
+        test=startXYZ.copy();
         test.z++;
         if (theWorld.isAirBlock(test.x.intValue(), test.y.intValue(), test.z.intValue())) {
         	return test;
         }
-        test=startXYZ.clone();
+        test=startXYZ.copy();
         test.z--;
         if (theWorld.isAirBlock(test.x.intValue(), test.y.intValue(), test.z.intValue())) {
         	return test;

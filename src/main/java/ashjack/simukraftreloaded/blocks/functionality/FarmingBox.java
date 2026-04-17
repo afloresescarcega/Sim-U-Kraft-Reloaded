@@ -192,7 +192,7 @@ public class FarmingBox  implements Serializable
         V3 m1 = getMarkerVector(1);
         V3 m2 = getMarkerVector(2);
         V3 m3 = getMarkerVector(3);
-        V3 c = m1.clone();
+        V3 c = m1.copy();
         int length = this.getSizeLength();
 
         if (length == 1)
@@ -204,7 +204,7 @@ public class FarmingBox  implements Serializable
         {
             for (int i = 0; i <= this.getSizeWidth(); i++)
             {
-                ret.add(c.clone());
+                ret.add(c.copy());
 
                 if (m2.x > m1.x)
                 {
@@ -256,7 +256,7 @@ public class FarmingBox  implements Serializable
             V3 m2 = getMarkerVector(2);
             V3 m3 = getMarkerVector(3);
             V3 b = getLocation();
-            V3 c = b.clone();
+            V3 c = b.copy();
 
             for (int i = 0; i <= this.getSizeWidth() + 1; i++)
             {
@@ -277,7 +277,7 @@ public class FarmingBox  implements Serializable
                     c.z--;
                 }
 
-                ret.add(c.clone());
+                ret.add(c.copy());
             }
 
             for (int i = 0; i <= this.getSizeLength() + 2; i++)
@@ -299,7 +299,7 @@ public class FarmingBox  implements Serializable
                     c.z--;
                 }
 
-                ret.add(c.clone());
+                ret.add(c.copy());
             }
 
             for (int i = 0; i <= this.getSizeWidth() + 2; i++)
@@ -321,7 +321,7 @@ public class FarmingBox  implements Serializable
                     c.z++;
                 }
 
-                ret.add(c.clone());
+                ret.add(c.copy());
             }
 
             for (int i = 0; i <= this.getSizeLength() + 2; i++)
@@ -343,7 +343,7 @@ public class FarmingBox  implements Serializable
                     c.z++;
                 }
 
-                ret.add(c.clone());
+                ret.add(c.copy());
             }
         }
         catch (Exception e)

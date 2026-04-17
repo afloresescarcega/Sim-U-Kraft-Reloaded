@@ -21,7 +21,6 @@ import net.minecraft.inventory.IInventory;
 
 public class JobTerraformer extends Job
 {
-    public Vocation vocation = null;
     public FolkData theFolk = null;
     public Stage theStage;
     transient public int runDelay = 1000;

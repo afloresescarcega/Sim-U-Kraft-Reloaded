@@ -31,7 +31,6 @@ public class JobLumberjack extends Job implements Serializable
 {
     private static final long serialVersionUID = -1177112207904887741L;
 
-    public Vocation vocation = null;
     public FolkData theFolk = null;
     public Stage theStage;
     transient public int runDelay = 1000;
@@ -142,14 +141,14 @@ public class JobLumberjack extends Job implements Serializable
             }
             else if (theFolk.employedAt != null)
             {
-                searchXYZ = theFolk.employedAt.clone();
+                searchXYZ = theFolk.employedAt.copy();
             }
             else
             {
-                searchXYZ = theFolk.location.clone();
+                searchXYZ = theFolk.location.copy();
             }
             
-            ts = searchXYZ.clone();
+            ts = searchXYZ.copy();
         }
         catch (Exception e)
         {
@@ -161,11 +160,11 @@ public class JobLumberjack extends Job implements Serializable
 
         if (ts != null)
         {
-            searchpos = ts.clone();
+            searchpos = ts.copy();
         }
         else
         {
-            searchpos = theFolk.location.clone();
+            searchpos = theFolk.location.copy();
         }
 
         try

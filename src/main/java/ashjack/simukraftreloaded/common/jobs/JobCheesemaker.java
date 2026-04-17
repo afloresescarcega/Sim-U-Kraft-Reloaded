@@ -29,7 +29,6 @@ Specialblock meta values for this job:
 5=waypoint serve customers/cutting cheese into slices
 */
 public class JobCheesemaker extends Job {
-	public Vocation vocation = null;
     public FolkData theFolk = null;
     public Stage theStage;
     public int runDelay = 1000;

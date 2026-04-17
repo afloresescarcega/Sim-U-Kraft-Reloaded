@@ -39,10 +39,12 @@ public class Job implements Serializable
 				return;
 			}*/
 		
-			FileInputStream fstream = new FileInputStream(SimukraftReloaded.getSimukraftFolder() + "/jobs/" + g.getName());
-        	DataInputStream in = new DataInputStream(fstream);
-        	BufferedReader br = new BufferedReader(new InputStreamReader(in));
-        	
+			try (
+        	    FileInputStream fstream = new FileInputStream(SimukraftReloaded.getSimukraftFolder() + "/jobs/" + g.getName());
+        	    DataInputStream in = new DataInputStream(fstream);
+        	    BufferedReader br = new BufferedReader(new InputStreamReader(in))
+        	)
+        	{
         	for(int i=0; i<g.length(); i++)
         	{
         		String strLine = br.readLine().toString().trim();
@@ -123,8 +125,8 @@ public class Job implements Serializable
         	
         		
         	}
-        	
-        	br.close();
+
+        	}
 	        }
 		}
         catch(Exception e)

@@ -389,7 +389,7 @@ public class GuiMerchant extends GuiScreen
         ArrayList<IInventory> chests = Job.inventoriesFindClosest(new V3(
                                            mc.thePlayer.posX, mc.thePlayer.posY, mc.thePlayer.posZ, mc.thePlayer.dimension), 5);
 
-        if (chests == null | chests.size() == 0)
+        if (chests == null || chests.size() == 0)
         {
             SimukraftReloaded.sendChat("Merchant: Please place a chest down here, and place stacks of 64 blocks in there.");
             mc.currentScreen = null;
