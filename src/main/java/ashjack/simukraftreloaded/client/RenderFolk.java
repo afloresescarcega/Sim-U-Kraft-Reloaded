@@ -1,5 +1,8 @@
 package ashjack.simukraftreloaded.client;
 
+import ashjack.simukraftreloaded.entity.EntityFolk;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.model.ModelBiped;
@@ -8,13 +11,7 @@ import net.minecraft.client.renderer.entity.RenderBiped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.ResourceLocation;
-
 import org.lwjgl.opengl.GL11;
-
-import ashjack.simukraftreloaded.core.ModSimukraft;
-import ashjack.simukraftreloaded.entity.EntityFolk;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class RenderFolk extends RenderBiped

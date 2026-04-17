@@ -1,7 +1,5 @@
 package ashjack.simukraftreloaded.blocks.gases;
 
-import net.minecraft.creativetab.CreativeTabs;
-
 public class BlockSulphurDioxide extends BlockGas
 {
 	public BlockSulphurDioxide() 

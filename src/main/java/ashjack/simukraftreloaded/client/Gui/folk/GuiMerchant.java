@@ -1,14 +1,7 @@
 package ashjack.simukraftreloaded.client.Gui.folk;
 
-import java.util.ArrayList;
-import java.util.logging.Level;
-
-import org.lwjgl.input.Keyboard;
-import org.lwjgl.input.Mouse;
-
 import ashjack.simukraftreloaded.common.PricesForBlocks;
 import ashjack.simukraftreloaded.common.jobs.Job;
-import ashjack.simukraftreloaded.core.ModSimukraft;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
 import net.minecraft.block.Block;
@@ -18,6 +11,10 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.init.Blocks;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
+import org.lwjgl.input.Keyboard;
+import org.lwjgl.input.Mouse;
+
+import java.util.ArrayList;
 
 public class GuiMerchant extends GuiScreen
 {

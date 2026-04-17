@@ -1,31 +1,25 @@
 package ashjack.simukraftreloaded.common.jobs;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
-import ashjack.simukraftreloaded.common.jobs.Job.Vocation;
-import ashjack.simukraftreloaded.common.jobs.JobMiner.Stage;
-import ashjack.simukraftreloaded.core.ModSimukraft;
 import ashjack.simukraftreloaded.core.building.Building;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloadedConfig;
 import ashjack.simukraftreloaded.folk.FolkData;
 import ashjack.simukraftreloaded.folk.FolkData.FolkAction;
 import ashjack.simukraftreloaded.folk.FolkData.GotoMethod;
-import ashjack.simukraftreloaded.proxies.CommonProxy;
 import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public class JobLumberjack extends Job implements Serializable
 {

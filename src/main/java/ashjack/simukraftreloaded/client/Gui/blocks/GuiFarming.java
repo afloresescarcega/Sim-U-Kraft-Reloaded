@@ -1,18 +1,15 @@
 package ashjack.simukraftreloaded.client.Gui.blocks;
 
-import net.minecraft.client.gui.GuiButton;
-import net.minecraft.client.gui.GuiScreen;
-
-import org.lwjgl.input.Mouse;
-
 import ashjack.simukraftreloaded.blocks.functionality.FarmingBox;
 import ashjack.simukraftreloaded.blocks.functionality.FarmingBox.FarmType;
 import ashjack.simukraftreloaded.client.Gui.folk.GuiEmployFolk;
 import ashjack.simukraftreloaded.common.jobs.Job.Vocation;
-import ashjack.simukraftreloaded.core.ModSimukraft;
 import ashjack.simukraftreloaded.core.game.GameMode;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.folk.FolkData;
+import net.minecraft.client.gui.GuiButton;
+import net.minecraft.client.gui.GuiScreen;
+import org.lwjgl.input.Mouse;
 
 public class GuiFarming extends GuiScreen
 {

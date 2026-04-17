@@ -1,12 +1,8 @@
 package ashjack.simukraftreloaded.folk;
 
-import java.io.File;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Random;
-
 import ashjack.simukraftreloaded.common.Relationship;
 import ashjack.simukraftreloaded.common.jobs.Job;
+import ashjack.simukraftreloaded.common.jobs.Job.Vocation;
 import ashjack.simukraftreloaded.common.jobs.JobBaker;
 import ashjack.simukraftreloaded.common.jobs.JobBrickMaker;
 import ashjack.simukraftreloaded.common.jobs.JobBuilder;
@@ -29,7 +25,6 @@ import ashjack.simukraftreloaded.common.jobs.JobMiner;
 import ashjack.simukraftreloaded.common.jobs.JobShepherd;
 import ashjack.simukraftreloaded.common.jobs.JobSoldier;
 import ashjack.simukraftreloaded.common.jobs.JobTerraformer;
-import ashjack.simukraftreloaded.common.jobs.Job.Vocation;
 import ashjack.simukraftreloaded.common.jobs.JobTerraformer.TerraformerType;
 import ashjack.simukraftreloaded.core.ModSimukraft;
 import ashjack.simukraftreloaded.core.building.Building;
@@ -37,26 +32,25 @@ import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloadedConfig;
 import ashjack.simukraftreloaded.entity.EntityFolk;
 import ashjack.simukraftreloaded.folk.genetics.Race;
-import ashjack.simukraftreloaded.folk.genetics.Races;
 import ashjack.simukraftreloaded.folk.traits.Trait;
 import ashjack.simukraftreloaded.folk.traits.Traits;
 import ashjack.simukraftreloaded.packetsNEW.PacketHandler;
 import ashjack.simukraftreloaded.packetsNEW.toClient.UpdateFolkPositionPacket;
-import ashjack.simukraftreloaded.proxies.CommonProxy;
 import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
+import cpw.mods.fml.relauncher.Side;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
-import net.minecraft.inventory.ContainerPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
-import cpw.mods.fml.common.network.NetworkRegistry;
-import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
-import cpw.mods.fml.relauncher.Side;
+
+import java.io.File;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Random;
 
 // THE FOLK'S Logic and properties, gets ticked even when EntityFolk is despawned.
 

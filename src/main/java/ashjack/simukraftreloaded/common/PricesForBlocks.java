@@ -1,13 +1,12 @@
 package ashjack.simukraftreloaded.common;
 
+import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
+
 import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Random;
-
-import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
 
 public class PricesForBlocks implements Serializable
 {

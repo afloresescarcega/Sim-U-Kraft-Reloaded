@@ -1,12 +1,11 @@
 package ashjack.simukraftreloaded.core.registry;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 import ashjack.simukraftreloaded.blocks.gases.BlockCarbonDioxide;
 import ashjack.simukraftreloaded.blocks.gases.BlockGas;
 import ashjack.simukraftreloaded.blocks.gases.BlockRadiationGas;
 import ashjack.simukraftreloaded.blocks.gases.BlockSulphurDioxide;
-import net.minecraft.block.Block;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class SimukraftReloadedGases 
 {

@@ -1,7 +1,5 @@
 package ashjack.simukraftreloaded.core.registry;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 import ashjack.simukraftreloaded.blocks.BlockCheeseBlock;
 import ashjack.simukraftreloaded.blocks.BlockCityBox;
 import ashjack.simukraftreloaded.blocks.BlockCompositeBrick;
@@ -18,9 +16,8 @@ import ashjack.simukraftreloaded.blocks.functionality.FluidMilk;
 import ashjack.simukraftreloaded.blocks.functionality.TileEntityWindmill;
 import ashjack.simukraftreloaded.items.ItemBlockFolkLivingBlock;
 import ashjack.simukraftreloaded.items.ItemBlockLightBox;
-import ashjack.simukraftreloaded.items.ItemSUKDrink;
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraftforge.fluids.Fluid;
 
 public class SimukraftReloadedBlocks 

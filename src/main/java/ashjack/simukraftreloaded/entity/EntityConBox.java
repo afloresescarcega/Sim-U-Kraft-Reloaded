@@ -1,20 +1,19 @@
 package ashjack.simukraftreloaded.entity;
 
-import java.util.ArrayList;
-import java.util.Random;
-
 import ashjack.simukraftreloaded.common.jobs.Job;
 import ashjack.simukraftreloaded.core.ModSimukraft;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloadedBlocks;
 import ashjack.simukraftreloaded.folk.FolkData;
-import ashjack.simukraftreloaded.proxies.CommonProxy;
 import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 public class EntityConBox extends Entity
 {

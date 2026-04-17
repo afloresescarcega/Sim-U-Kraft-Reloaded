@@ -1,38 +1,27 @@
 package ashjack.simukraftreloaded.common.jobs;
 
+import ashjack.simukraftreloaded.blocks.functionality.FarmingBox;
+import ashjack.simukraftreloaded.blocks.functionality.FarmingBox.FarmType;
+import ashjack.simukraftreloaded.core.game.GameMode;
+import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
+import ashjack.simukraftreloaded.folk.FolkData;
+import ashjack.simukraftreloaded.folk.FolkData.FolkAction;
+import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
+import net.minecraft.block.Block;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.item.ItemFood;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.AxisAlignedBB;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
-
-import ashjack.simukraftreloaded.blocks.functionality.FarmingBox;
-import ashjack.simukraftreloaded.blocks.functionality.FarmingBox.FarmType;
-import ashjack.simukraftreloaded.common.jobs.Job.Vocation;
-import ashjack.simukraftreloaded.common.jobs.JobMiner.Stage;
-import ashjack.simukraftreloaded.core.ModSimukraft;
-import ashjack.simukraftreloaded.core.game.GameMode;
-import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
-import ashjack.simukraftreloaded.folk.FolkData;
-import ashjack.simukraftreloaded.folk.FolkData.FolkAction;
-import ashjack.simukraftreloaded.folk.FolkData.GotoMethod;
-import ashjack.simukraftreloaded.proxies.CommonProxy;
-import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemFood;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.ChunkCoordinates;
-import net.minecraft.world.World;
-import net.minecraftforge.common.IPlantable;
 
 public class JobCropFarmer extends Job implements Serializable
 {

@@ -1,11 +1,5 @@
 package ashjack.simukraftreloaded.common;
 
-import io.netty.buffer.ByteBuf;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.EnumSet;
-
 import ashjack.simukraftreloaded.blocks.functionality.FarmingBox;
 import ashjack.simukraftreloaded.blocks.functionality.MiningBox;
 import ashjack.simukraftreloaded.client.Gui.other.GuiRunMod;
@@ -14,31 +8,15 @@ import ashjack.simukraftreloaded.core.building.Building;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloadedConfig;
 import ashjack.simukraftreloaded.folk.FolkData;
-import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
-import net.minecraft.client.Minecraft;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.world.World;
-import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.TickEvent;
-import cpw.mods.fml.common.gameevent.TickEvent.ClientTickEvent;
-import cpw.mods.fml.common.gameevent.TickEvent.RenderTickEvent;
 import cpw.mods.fml.common.gameevent.TickEvent.ServerTickEvent;
 import cpw.mods.fml.common.gameevent.TickEvent.WorldTickEvent;
-import cpw.mods.fml.common.network.ByteBufUtils;
 import cpw.mods.fml.common.network.NetworkRegistry;
-import cpw.mods.fml.common.network.simpleimpl.IMessage;
-import cpw.mods.fml.common.network.simpleimpl.IMessageHandler;
-import cpw.mods.fml.common.network.simpleimpl.MessageContext;
 import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import cpw.mods.fml.server.FMLServerHandler;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.world.World;
 
 public class CommonTickHandler
 {

@@ -1,12 +1,6 @@
 package ashjack.simukraftreloaded.common.jobs;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Random;
-
 import ashjack.simukraftreloaded.blocks.functionality.TileEntityWindmill;
-import ashjack.simukraftreloaded.core.ModSimukraft;
 import ashjack.simukraftreloaded.core.building.Building;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.folk.FolkData;
@@ -24,6 +18,11 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Random;
 
 public abstract class Job
 {

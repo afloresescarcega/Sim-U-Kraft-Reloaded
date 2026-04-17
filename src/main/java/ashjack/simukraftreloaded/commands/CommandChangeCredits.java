@@ -1,11 +1,11 @@
 package ashjack.simukraftreloaded.commands;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CommandChangeCredits implements ICommand{
 	

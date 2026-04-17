@@ -1,21 +1,12 @@
 package ashjack.simukraftreloaded.blocks;
 
-import java.util.List;
-
-import ashjack.simukraftreloaded.client.Gui.blocks.GuiBuildingConstructor;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloadedTabs;
-import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
-import net.minecraft.world.World;
 
 public class BlockCompositeBrick extends Block {
     @SideOnly(Side.CLIENT)

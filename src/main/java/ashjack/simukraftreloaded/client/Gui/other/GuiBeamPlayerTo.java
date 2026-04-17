@@ -1,16 +1,13 @@
 package ashjack.simukraftreloaded.client.Gui.other;
 
+import ashjack.simukraftreloaded.client.ClientTickHandler;
+import ashjack.simukraftreloaded.common.CourierTask;
+import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
+import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.entity.player.EntityPlayer;
-
 import org.lwjgl.input.Keyboard;
-
-import ashjack.simukraftreloaded.client.ClientTickHandler;
-import ashjack.simukraftreloaded.common.CourierTask;
-import ashjack.simukraftreloaded.core.ModSimukraft;
-import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
-import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
 
 public class GuiBeamPlayerTo extends GuiScreen
 {

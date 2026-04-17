@@ -1,10 +1,5 @@
 package ashjack.simukraftreloaded.client.Gui.blocks;
 
-import java.util.HashMap;
-
-import org.lwjgl.input.Keyboard;
-import org.lwjgl.input.Mouse;
-
 import ashjack.simukraftreloaded.client.Gui.other.GuiBeamPlayerTo;
 import ashjack.simukraftreloaded.core.building.Building;
 import ashjack.simukraftreloaded.folk.FolkData;
@@ -13,6 +8,8 @@ import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiTextField;
 import net.minecraft.entity.player.EntityPlayer;
+import org.lwjgl.input.Keyboard;
+import org.lwjgl.input.Mouse;
 
 public class GuiCityBox extends GuiScreen
 {

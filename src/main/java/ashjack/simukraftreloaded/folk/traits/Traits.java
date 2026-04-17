@@ -1,9 +1,6 @@
 package ashjack.simukraftreloaded.folk.traits;
 
-import net.minecraft.init.Blocks;
-
-
-public class Traits 
+public class Traits
 {
 	public static Trait traitReligious = new TraitReligious();
 	public static Trait traitWorkaholic = new TraitWorkaholic();

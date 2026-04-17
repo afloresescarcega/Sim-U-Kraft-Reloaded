@@ -1,7 +1,5 @@
 package ashjack.simukraftreloaded.blocks.gases;
 
-import net.minecraft.creativetab.CreativeTabs;
-
 public class BlockRadiationGas extends BlockGas
 {
 	public BlockRadiationGas() 

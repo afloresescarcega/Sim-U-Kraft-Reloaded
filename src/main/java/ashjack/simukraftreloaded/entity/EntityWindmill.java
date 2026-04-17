@@ -1,14 +1,12 @@
 package ashjack.simukraftreloaded.entity;
 
-import java.util.Random;
-
-import ashjack.simukraftreloaded.core.ModSimukraft;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
+
+import java.util.Random;
 
 public class EntityWindmill extends Entity {
 

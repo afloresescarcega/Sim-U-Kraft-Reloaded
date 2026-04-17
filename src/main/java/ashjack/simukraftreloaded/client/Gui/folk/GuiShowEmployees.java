@@ -1,15 +1,12 @@
 package ashjack.simukraftreloaded.client.Gui.folk;
 
-import java.util.ArrayList;
-
+import ashjack.simukraftreloaded.folk.FolkData;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
-
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 
-import ashjack.simukraftreloaded.core.ModSimukraft;
-import ashjack.simukraftreloaded.folk.FolkData;
+import java.util.ArrayList;
 
 public class GuiShowEmployees extends GuiScreen
 {

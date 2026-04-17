@@ -1,17 +1,13 @@
 package ashjack.simukraftreloaded.client;
 
 
+import ashjack.simukraftreloaded.entity.EntityAlignBeam;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.monster.EntityCreeper;
-import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.util.ResourceLocation;
-
 import org.lwjgl.opengl.GL11;
-
-import ashjack.simukraftreloaded.entity.EntityAlignBeam;
 
 
 public class RenderAlignBeam extends Render {

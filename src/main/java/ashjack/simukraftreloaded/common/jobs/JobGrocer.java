@@ -1,27 +1,21 @@
 package ashjack.simukraftreloaded.common.jobs;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Random;
-
 import ashjack.simukraftreloaded.blocks.functionality.FarmingBox;
 import ashjack.simukraftreloaded.blocks.functionality.FarmingBox.FarmType;
-import ashjack.simukraftreloaded.common.jobs.Job.Vocation;
-import ashjack.simukraftreloaded.common.jobs.JobMiner.Stage;
-import ashjack.simukraftreloaded.core.ModSimukraft;
-import ashjack.simukraftreloaded.core.building.Building;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.folk.FolkData;
 import ashjack.simukraftreloaded.folk.FolkData.FolkAction;
 import ashjack.simukraftreloaded.folk.FolkData.GotoMethod;
-import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class JobGrocer extends Job implements Serializable
 {

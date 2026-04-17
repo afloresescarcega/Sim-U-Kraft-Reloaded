@@ -1,14 +1,11 @@
 package ashjack.simukraftreloaded.client.Gui.blocks;
 
-import org.lwjgl.input.Keyboard;
-import org.lwjgl.input.Mouse;
-
-import ashjack.simukraftreloaded.client.Gui.other.GuiBeamPlayerTo;
-import ashjack.simukraftreloaded.core.building.Building;
 import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.entity.player.EntityPlayer;
+import org.lwjgl.input.Keyboard;
+import org.lwjgl.input.Mouse;
 
 public class GuiCityBoxTaxes extends GuiScreen
 {

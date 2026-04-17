@@ -1,6 +1,5 @@
 package ashjack.simukraftreloaded.folk.traits;
 
-import net.minecraft.block.Block;
 import ashjack.simukraftreloaded.core.Unused;
 import ashjack.simukraftreloaded.core.building.Building;
 import ashjack.simukraftreloaded.folk.FolkData;

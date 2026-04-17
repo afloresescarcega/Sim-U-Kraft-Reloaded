@@ -1,18 +1,16 @@
 package ashjack.simukraftreloaded.client.Gui.blocks;
 
-import java.util.ArrayList;
-
-import org.lwjgl.input.Mouse;
-
 import ashjack.simukraftreloaded.blocks.functionality.PathBox;
 import ashjack.simukraftreloaded.client.Gui.folk.GuiEmployFolk;
 import ashjack.simukraftreloaded.common.jobs.Job.Vocation;
-import ashjack.simukraftreloaded.core.ModSimukraft;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.folk.FolkData;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiTextField;
+import org.lwjgl.input.Mouse;
+
+import java.util.ArrayList;
 
 
 /////NOTE : This box was never implimented, was going to make paths and bridges

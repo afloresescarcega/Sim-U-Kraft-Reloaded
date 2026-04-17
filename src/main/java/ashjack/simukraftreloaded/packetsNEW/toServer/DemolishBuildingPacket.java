@@ -1,18 +1,18 @@
 package ashjack.simukraftreloaded.packetsNEW.toServer;
 
-import java.util.ArrayList;
-
-import net.minecraft.block.Block;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.world.World;
 import ashjack.simukraftreloaded.core.building.Building;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
-import io.netty.buffer.ByteBuf;
 import cpw.mods.fml.common.network.ByteBufUtils;
 import cpw.mods.fml.common.network.simpleimpl.IMessage;
 import cpw.mods.fml.common.network.simpleimpl.IMessageHandler;
 import cpw.mods.fml.common.network.simpleimpl.MessageContext;
+import io.netty.buffer.ByteBuf;
+import net.minecraft.block.Block;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.world.World;
+
+import java.util.ArrayList;
 
 public class DemolishBuildingPacket implements IMessage
 {

@@ -1,15 +1,11 @@
 package ashjack.simukraftreloaded.blocks;
 
-import java.util.ArrayList;
-
 import ashjack.simukraftreloaded.blocks.functionality.Marker;
 import ashjack.simukraftreloaded.client.Gui.blocks.GuiMarker;
-import ashjack.simukraftreloaded.core.ModSimukraft;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloadedConfig;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloadedTabs;
 import ashjack.simukraftreloaded.entity.EntityAlignBeam;
-import ashjack.simukraftreloaded.proxies.CommonProxy;
 import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -17,16 +13,16 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.IIcon;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IExtendedEntityProperties;
+
+import java.util.ArrayList;
 
 public class BlockMarker extends Block implements IExtendedEntityProperties
 {

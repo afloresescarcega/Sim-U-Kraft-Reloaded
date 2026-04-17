@@ -1,8 +1,5 @@
 package ashjack.simukraftreloaded.common.jobs;
 
-import java.util.ArrayList;
-
-import ashjack.simukraftreloaded.core.ModSimukraft;
 import ashjack.simukraftreloaded.core.building.Building;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloadedBlocks;
@@ -15,9 +12,10 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
+
+import java.util.ArrayList;
 
 /*
 Specialblock meta values for this job:

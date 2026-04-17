@@ -1,13 +1,5 @@
 package ashjack.simukraftreloaded.client.Gui.folk;
 
-import java.util.ArrayList;
-
-import net.minecraft.client.gui.GuiButton;
-import net.minecraft.client.gui.GuiScreen;
-
-import org.lwjgl.input.Keyboard;
-import org.lwjgl.input.Mouse;
-
 import ashjack.simukraftreloaded.blocks.functionality.FarmingBox;
 import ashjack.simukraftreloaded.blocks.functionality.MiningBox;
 import ashjack.simukraftreloaded.blocks.functionality.PathBox;
@@ -16,27 +8,17 @@ import ashjack.simukraftreloaded.client.Gui.blocks.GuiControlBox;
 import ashjack.simukraftreloaded.client.Gui.blocks.GuiFarming;
 import ashjack.simukraftreloaded.client.Gui.blocks.GuiMining;
 import ashjack.simukraftreloaded.client.Gui.blocks.GuiPathBox;
-import ashjack.simukraftreloaded.common.jobs.Job;
-import ashjack.simukraftreloaded.common.jobs.JobBaker;
-import ashjack.simukraftreloaded.common.jobs.JobBuilder;
-import ashjack.simukraftreloaded.common.jobs.JobBuildersMerchant;
-import ashjack.simukraftreloaded.common.jobs.JobButcher;
-import ashjack.simukraftreloaded.common.jobs.JobCourier;
-import ashjack.simukraftreloaded.common.jobs.JobCropFarmer;
-import ashjack.simukraftreloaded.common.jobs.JobGlassMaker;
-import ashjack.simukraftreloaded.common.jobs.JobGrocer;
-import ashjack.simukraftreloaded.common.jobs.JobLivestockFarmer;
-import ashjack.simukraftreloaded.common.jobs.JobLumberjack;
-import ashjack.simukraftreloaded.common.jobs.JobMiner;
-import ashjack.simukraftreloaded.common.jobs.JobShepherd;
-import ashjack.simukraftreloaded.common.jobs.JobSoldier;
-import ashjack.simukraftreloaded.common.jobs.JobTerraformer;
 import ashjack.simukraftreloaded.common.jobs.Job.Vocation;
-import ashjack.simukraftreloaded.core.ModSimukraft;
 import ashjack.simukraftreloaded.core.game.GameMode;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.folk.FolkData;
 import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
+import net.minecraft.client.gui.GuiButton;
+import net.minecraft.client.gui.GuiScreen;
+import org.lwjgl.input.Keyboard;
+import org.lwjgl.input.Mouse;
+
+import java.util.ArrayList;
 
 public class GuiEmployFolk extends GuiScreen
 {

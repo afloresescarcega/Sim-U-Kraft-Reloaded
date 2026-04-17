@@ -1,37 +1,29 @@
 package ashjack.simukraftreloaded.proxies;
 
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import ashjack.simukraftreloaded.client.ClientTickHandler;
+import ashjack.simukraftreloaded.client.Gui.KeyHandler;
 import ashjack.simukraftreloaded.client.ModelAlignBeam;
 import ashjack.simukraftreloaded.client.ModelConBox;
 import ashjack.simukraftreloaded.client.ModelFolkFemale;
 import ashjack.simukraftreloaded.client.RenderAlignBeam;
 import ashjack.simukraftreloaded.client.RenderConBox;
 import ashjack.simukraftreloaded.client.RenderFolk;
-import ashjack.simukraftreloaded.client.Gui.KeyHandler;
-import ashjack.simukraftreloaded.common.CommonTickHandler;
-import ashjack.simukraftreloaded.core.ModSimukraft;
-import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.entity.EntityAlignBeam;
 import ashjack.simukraftreloaded.entity.EntityConBox;
 import ashjack.simukraftreloaded.entity.EntityFolk;
-import ashjack.simukraftreloaded.entity.EntityWindmill;
-import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.gameevent.TickEvent;
-import cpw.mods.fml.common.gameevent.PlayerEvent;
-import cpw.mods.fml.common.network.simpleimpl.MessageContext;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.client.registry.RenderingRegistry;
+import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.network.simpleimpl.MessageContext;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
-import net.minecraftforge.client.MinecraftForgeClient;
+
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ClientProxy extends CommonProxy
 {

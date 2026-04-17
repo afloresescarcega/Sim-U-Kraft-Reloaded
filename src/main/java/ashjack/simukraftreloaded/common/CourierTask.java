@@ -1,16 +1,15 @@
 package ashjack.simukraftreloaded.common;
 
-import java.io.File;
-import java.io.Serializable;
-import java.util.ArrayList;
-
 import ashjack.simukraftreloaded.common.jobs.Job;
 import ashjack.simukraftreloaded.core.ModSimukraft;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
 import cpw.mods.fml.relauncher.Side;
-import net.minecraft.client.Minecraft;
 import net.minecraft.inventory.IInventory;
+
+import java.io.File;
+import java.io.Serializable;
+import java.util.ArrayList;
 
 public class CourierTask implements Serializable
 {

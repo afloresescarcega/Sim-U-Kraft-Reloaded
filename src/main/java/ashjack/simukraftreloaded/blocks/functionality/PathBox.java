@@ -1,10 +1,6 @@
 package ashjack.simukraftreloaded.blocks.functionality;
 
-import java.io.File;
-
 import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
-import net.minecraft.client.Minecraft;
-import net.minecraft.world.World;
 
 //THIS NEW BOX WAS NEVER IMPLIMENTED
 public class PathBox

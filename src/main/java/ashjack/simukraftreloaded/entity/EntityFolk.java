@@ -1,15 +1,9 @@
 package ashjack.simukraftreloaded.entity;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Random;
-
 import ashjack.simukraftreloaded.client.Gui.folk.GuiEntityFolk;
 import ashjack.simukraftreloaded.client.Gui.folk.GuiMerchant;
-import ashjack.simukraftreloaded.common.jobs.JobFisherman;
 import ashjack.simukraftreloaded.common.jobs.Job.Vocation;
+import ashjack.simukraftreloaded.common.jobs.JobFisherman;
 import ashjack.simukraftreloaded.common.jobs.JobFisherman.Stage;
 import ashjack.simukraftreloaded.core.ModSimukraft;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
@@ -17,7 +11,8 @@ import ashjack.simukraftreloaded.core.registry.SimukraftReloadedBlocks;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloadedConfig;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloadedItems;
 import ashjack.simukraftreloaded.folk.FolkData;
-import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
@@ -34,21 +29,22 @@ import net.minecraft.entity.ai.EntityAIRestrictOpenDoor;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.ai.EntityAIWatchClosest2;
-import net.minecraft.entity.ai.RandomPositionGenerator;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.pathfinding.PathEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
 
 // the entity is just for show, EntityData actually does the work, doing it this way doesn't require chunkloading
 // so the player can be miles away and work still gets done.

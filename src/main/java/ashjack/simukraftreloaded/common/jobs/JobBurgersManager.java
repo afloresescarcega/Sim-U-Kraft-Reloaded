@@ -1,8 +1,5 @@
 package ashjack.simukraftreloaded.common.jobs;
 
-import java.util.ArrayList;
-
-import ashjack.simukraftreloaded.core.ModSimukraft;
 import ashjack.simukraftreloaded.core.building.Building;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloadedItems;
@@ -15,6 +12,8 @@ import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
+import java.util.ArrayList;
 
 public class JobBurgersManager extends Job {
 	

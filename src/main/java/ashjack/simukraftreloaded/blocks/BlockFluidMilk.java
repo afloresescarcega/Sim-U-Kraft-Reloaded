@@ -1,21 +1,13 @@
 package ashjack.simukraftreloaded.blocks;
 
-import ashjack.simukraftreloaded.core.ModSimukraft;
-import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloadedBlocks;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloadedTabs;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.IIcon;
-import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidClassic;
-import net.minecraftforge.fluids.Fluid;
 
 public class BlockFluidMilk extends BlockFluidClassic {
 	private IIcon icons[];

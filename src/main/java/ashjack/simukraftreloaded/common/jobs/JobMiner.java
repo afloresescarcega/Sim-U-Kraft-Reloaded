@@ -1,24 +1,20 @@
 package ashjack.simukraftreloaded.common.jobs;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Random;
-
 import ashjack.simukraftreloaded.blocks.functionality.MiningBox;
-import ashjack.simukraftreloaded.common.jobs.JobBuilder.Stage;
-import ashjack.simukraftreloaded.core.ModSimukraft;
 import ashjack.simukraftreloaded.core.game.GameMode;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloadedBlocks;
 import ashjack.simukraftreloaded.folk.FolkData;
 import ashjack.simukraftreloaded.folk.FolkData.FolkAction;
 import ashjack.simukraftreloaded.folk.FolkData.GotoMethod;
-import ashjack.simukraftreloaded.proxies.CommonProxy;
 import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
+
+import java.io.Serializable;
+import java.util.ArrayList;
 
 public class JobMiner extends Job implements Serializable
 {

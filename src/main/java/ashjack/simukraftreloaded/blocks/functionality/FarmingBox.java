@@ -1,9 +1,5 @@
 package ashjack.simukraftreloaded.blocks.functionality;
 
-import java.io.File;
-import java.io.Serializable;
-import java.util.ArrayList;
-
 import ashjack.simukraftreloaded.core.ModSimukraft;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloadedBlocks;
@@ -13,6 +9,10 @@ import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.World;
+
+import java.io.File;
+import java.io.Serializable;
+import java.util.ArrayList;
 
 public class FarmingBox  implements Serializable
 {

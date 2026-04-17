@@ -1,5 +1,20 @@
 package ashjack.simukraftreloaded.core.building;
 
+import ashjack.simukraftreloaded.core.ModSimukraft;
+import ashjack.simukraftreloaded.core.game.GameMode;
+import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
+import ashjack.simukraftreloaded.core.registry.SimukraftReloadedBlocks;
+import ashjack.simukraftreloaded.folk.FolkData;
+import ashjack.simukraftreloaded.infrastructure.Infrastructure;
+import ashjack.simukraftreloaded.infrastructure.InfrastructureElectricity;
+import ashjack.simukraftreloaded.infrastructure.InfrastructureWater;
+import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
+import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
+import net.minecraft.item.ItemStack;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.world.World;
+
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.File;
@@ -10,25 +25,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-
-import ashjack.simukraftreloaded.core.ModSimukraft;
-import ashjack.simukraftreloaded.core.game.GameMode;
-import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
-import ashjack.simukraftreloaded.core.registry.SimukraftReloadedBlocks;
-import ashjack.simukraftreloaded.folk.FolkData;
-import ashjack.simukraftreloaded.infrastructure.Infrastructure;
-import ashjack.simukraftreloaded.infrastructure.Infrastructure.infrastructures;
-import ashjack.simukraftreloaded.infrastructure.InfrastructureElectricity;
-import ashjack.simukraftreloaded.infrastructure.InfrastructureWater;
-import ashjack.simukraftreloaded.proxies.CommonProxy;
-import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
-import cpw.mods.fml.relauncher.Side;
-import net.minecraft.block.Block;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiButton;
-import net.minecraft.item.ItemStack;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.world.World;
 
 //NOTE: Buildings are stored in .minecraft/mods/simukraft/buildings/...
 

@@ -1,17 +1,11 @@
 package ashjack.simukraftreloaded.core;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-
-import ashjack.simukraftreloaded.core.jobs.Job;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
-import net.minecraft.client.Minecraft;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.server.MinecraftServer;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+
+import java.io.BufferedOutputStream;
+import java.io.File;
 
 public class UpdateChecker 
 {

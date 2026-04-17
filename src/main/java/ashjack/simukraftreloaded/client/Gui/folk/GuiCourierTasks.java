@@ -1,21 +1,18 @@
 package ashjack.simukraftreloaded.client.Gui.folk;
 
-import java.io.File;
-import java.util.HashMap;
-
-import net.minecraft.client.gui.GuiButton;
-import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.entity.player.EntityPlayer;
-
-import org.lwjgl.input.Keyboard;
-import org.lwjgl.input.Mouse;
-
 import ashjack.simukraftreloaded.client.Gui.blocks.GuiControlBox;
 import ashjack.simukraftreloaded.common.CourierTask;
-import ashjack.simukraftreloaded.core.ModSimukraft;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.folk.FolkData;
 import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
+import net.minecraft.client.gui.GuiButton;
+import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.entity.player.EntityPlayer;
+import org.lwjgl.input.Keyboard;
+import org.lwjgl.input.Mouse;
+
+import java.io.File;
+import java.util.HashMap;
 
 public class GuiCourierTasks extends GuiScreen
 {

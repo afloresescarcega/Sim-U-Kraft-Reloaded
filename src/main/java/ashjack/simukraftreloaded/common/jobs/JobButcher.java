@@ -1,21 +1,16 @@
 package ashjack.simukraftreloaded.common.jobs;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-
-import ashjack.simukraftreloaded.common.jobs.Job.Vocation;
-import ashjack.simukraftreloaded.common.jobs.JobMiner.Stage;
-import ashjack.simukraftreloaded.core.ModSimukraft;
 import ashjack.simukraftreloaded.core.building.Building;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.folk.FolkData;
 import ashjack.simukraftreloaded.folk.FolkData.FolkAction;
 import ashjack.simukraftreloaded.folk.FolkData.GotoMethod;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
+import java.io.Serializable;
+import java.util.ArrayList;
 
 public class JobButcher extends Job implements Serializable
 {

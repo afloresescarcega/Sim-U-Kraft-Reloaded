@@ -1,6 +1,5 @@
 package ashjack.simukraftreloaded.core.registry;
 
-import ashjack.simukraftreloaded.core.ModSimukraft;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;

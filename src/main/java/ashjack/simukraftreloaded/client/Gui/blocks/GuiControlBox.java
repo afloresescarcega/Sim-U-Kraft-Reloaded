@@ -1,20 +1,5 @@
 package ashjack.simukraftreloaded.client.Gui.blocks;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockStairs;
-import net.minecraft.client.gui.GuiButton;
-import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
-
-import org.lwjgl.input.Keyboard;
-import org.lwjgl.input.Mouse;
-
 import ashjack.simukraftreloaded.blocks.BlockMarker;
 import ashjack.simukraftreloaded.client.Gui.folk.GuiCourierTasks;
 import ashjack.simukraftreloaded.client.Gui.folk.GuiEmployFolk;
@@ -22,14 +7,24 @@ import ashjack.simukraftreloaded.client.Gui.folk.GuiMerchant;
 import ashjack.simukraftreloaded.client.Gui.folk.GuiShowEmployees;
 import ashjack.simukraftreloaded.client.Gui.other.GuiBeamPlayerTo;
 import ashjack.simukraftreloaded.common.jobs.Job.Vocation;
-import ashjack.simukraftreloaded.core.ModSimukraft;
 import ashjack.simukraftreloaded.core.building.Building;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.folk.FolkData;
 import ashjack.simukraftreloaded.packetsNEW.PacketHandler;
 import ashjack.simukraftreloaded.packetsNEW.toServer.DemolishBuildingPacket;
-import ashjack.simukraftreloaded.packetsNEW.toServer.LoadBuildingPacket;
 import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
+import net.minecraft.block.Block;
+import net.minecraft.client.gui.GuiButton;
+import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+import org.lwjgl.input.Keyboard;
+import org.lwjgl.input.Mouse;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class GuiControlBox extends GuiScreen
 {

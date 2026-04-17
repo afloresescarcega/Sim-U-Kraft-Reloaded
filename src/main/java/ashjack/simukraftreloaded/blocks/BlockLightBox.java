@@ -1,8 +1,5 @@
 package ashjack.simukraftreloaded.blocks;
 
-import java.util.List;
-import java.util.Random;
-
 import ashjack.simukraftreloaded.core.registry.SimukraftReloadedTabs;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -13,8 +10,9 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
-import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.World;
+
+import java.util.List;
+import java.util.Random;
 
 public class BlockLightBox extends Block
 {

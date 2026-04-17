@@ -1,33 +1,18 @@
 package ashjack.simukraftreloaded.blocks.functionality;
 
-import java.util.ArrayList;
-
-import cofh.api.energy.EnergyStorage;
-import cofh.api.energy.IEnergyHandler;
+import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import cofh.api.energy.IEnergyProvider;
 import cofh.api.energy.IEnergyReceiver;
-import cofh.api.energy.IEnergyStorage;
-import cofh.api.energy.ItemEnergyContainer;
 import cofh.api.energy.TileEnergyHandler;
-import ashjack.simukraftreloaded.common.jobs.Job;
-import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
-import ashjack.simukraftreloaded.core.registry.SimukraftReloadedBlocks;
-import ashjack.simukraftreloaded.core.registry.SimukraftReloadedItems;
-import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
-import buildcraft.api.power.IEngine;
-import buildcraft.api.power.IRedstoneEngineReceiver;
-import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
-import net.minecraftforge.oredict.OreDictionary;
+
+import java.util.ArrayList;
 
 //requires Buildcraft API classes
 

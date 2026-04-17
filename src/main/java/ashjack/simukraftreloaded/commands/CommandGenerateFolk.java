@@ -1,14 +1,14 @@
 package ashjack.simukraftreloaded.commands;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.folk.FolkData;
 import ashjack.simukraftreloaded.packetsNEW.PacketHandler;
 import ashjack.simukraftreloaded.packetsNEW.toServer.GenerateFolkPacket;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CommandGenerateFolk implements ICommand{
 	

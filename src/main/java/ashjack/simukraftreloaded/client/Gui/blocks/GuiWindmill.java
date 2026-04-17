@@ -1,17 +1,7 @@
 package ashjack.simukraftreloaded.client.Gui.blocks;
 
 
-import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
-
-import org.lwjgl.input.Keyboard;
-import org.lwjgl.input.Mouse;
-import org.lwjgl.opengl.GL11;
-
-import ashjack.simukraftreloaded.blocks.functionality.TileEntityWindmill;
 
 public class GuiWindmill extends GuiScreen {
 	/*private static final ResourceLocation myBackgroundTexture

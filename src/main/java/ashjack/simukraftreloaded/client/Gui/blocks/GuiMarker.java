@@ -1,28 +1,25 @@
 package ashjack.simukraftreloaded.client.Gui.blocks;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.util.ArrayList;
-import java.util.HashMap;
-
+import ashjack.simukraftreloaded.blocks.BlockMarker;
+import ashjack.simukraftreloaded.common.jobs.Job;
+import ashjack.simukraftreloaded.core.building.Building;
+import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
+import ashjack.simukraftreloaded.core.registry.SimukraftReloadedBlocks;
+import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiTextField;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
-
 import org.lwjgl.input.Mouse;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import ashjack.simukraftreloaded.blocks.BlockMarker;
-import ashjack.simukraftreloaded.common.jobs.Job;
-import ashjack.simukraftreloaded.core.ModSimukraft;
-import ashjack.simukraftreloaded.core.building.Building;
-import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
-import ashjack.simukraftreloaded.core.registry.SimukraftReloadedBlocks;
-import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class GuiMarker extends GuiScreen
 {

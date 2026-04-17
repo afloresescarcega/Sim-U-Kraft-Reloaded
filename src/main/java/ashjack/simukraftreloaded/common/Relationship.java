@@ -1,19 +1,16 @@
 package ashjack.simukraftreloaded.common;
 
-import java.io.File;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Random;
-
 import ashjack.simukraftreloaded.core.ModSimukraft;
 import ashjack.simukraftreloaded.core.building.Building;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.folk.FolkData;
 import ashjack.simukraftreloaded.folk.FolkData.FolkAction;
-import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
 import cpw.mods.fml.relauncher.Side;
-import net.minecraft.client.Minecraft;
-import net.minecraft.world.World;
+
+import java.io.File;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Random;
 
 /** describes a relationship between two folks both blood-relations and friendships*/
 public class Relationship implements Serializable

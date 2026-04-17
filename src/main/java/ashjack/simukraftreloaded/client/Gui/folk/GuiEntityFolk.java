@@ -1,23 +1,17 @@
 package ashjack.simukraftreloaded.client.Gui.folk;
 
-import java.util.ArrayList;
-
+import ashjack.simukraftreloaded.common.Relationship;
+import ashjack.simukraftreloaded.folk.FolkData;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ResourceLocation;
-
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
 
-import ashjack.simukraftreloaded.common.Relationship;
-import ashjack.simukraftreloaded.core.ModSimukraft;
-import ashjack.simukraftreloaded.core.References;
-import ashjack.simukraftreloaded.folk.FolkData;
+import java.util.ArrayList;
 
 public class GuiEntityFolk extends GuiScreen
 {

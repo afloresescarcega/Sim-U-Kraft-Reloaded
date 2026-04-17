@@ -1,13 +1,10 @@
 package ashjack.simukraftreloaded.common.jobs;
 
-import java.io.Serializable;
-
-import ashjack.simukraftreloaded.common.jobs.Job.Vocation;
-import ashjack.simukraftreloaded.common.jobs.JobMiner.Stage;
-import ashjack.simukraftreloaded.core.ModSimukraft;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.folk.FolkData;
 import ashjack.simukraftreloaded.folk.FolkData.FolkAction;
+
+import java.io.Serializable;
 
 public class JobBuildersMerchant extends Job implements Serializable
 {

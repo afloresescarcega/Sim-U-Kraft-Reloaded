@@ -1,16 +1,13 @@
 package ashjack.simukraftreloaded.client.Gui.blocks;
 
+import ashjack.simukraftreloaded.common.jobs.JobTerraformer;
+import ashjack.simukraftreloaded.common.jobs.JobTerraformer.TerraformerType;
+import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
+import ashjack.simukraftreloaded.folk.FolkData;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiTextField;
-
 import org.lwjgl.input.Mouse;
-
-import ashjack.simukraftreloaded.common.jobs.JobTerraformer;
-import ashjack.simukraftreloaded.common.jobs.JobTerraformer.TerraformerType;
-import ashjack.simukraftreloaded.core.ModSimukraft;
-import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
-import ashjack.simukraftreloaded.folk.FolkData;
 
 public class GuiTerraform extends GuiScreen
 {

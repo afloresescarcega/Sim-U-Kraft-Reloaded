@@ -1,14 +1,12 @@
 package ashjack.simukraftreloaded.blocks;
 
-import java.util.List;
-
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockAir;
-import net.minecraft.block.BlockGlass;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
+import java.util.List;
 
 public class BlockSpecialBlock extends Block
 {

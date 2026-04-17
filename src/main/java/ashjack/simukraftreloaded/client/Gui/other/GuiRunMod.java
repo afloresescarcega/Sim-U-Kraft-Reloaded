@@ -1,17 +1,13 @@
 package ashjack.simukraftreloaded.client.Gui.other;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiButton;
-import net.minecraft.client.gui.GuiScreen;
-
-import org.lwjgl.input.Mouse;
-
-import ashjack.simukraftreloaded.core.ModSimukraft;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
-import ashjack.simukraftreloaded.folk.FolkData;
 import ashjack.simukraftreloaded.packetsNEW.PacketHandler;
 import ashjack.simukraftreloaded.packetsNEW.toServer.GenerateFolkPacket;
 import cpw.mods.fml.common.FMLCommonHandler;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiButton;
+import net.minecraft.client.gui.GuiScreen;
+import org.lwjgl.input.Mouse;
 
 public class GuiRunMod extends GuiScreen
 {

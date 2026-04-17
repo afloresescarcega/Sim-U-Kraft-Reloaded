@@ -1,9 +1,9 @@
 package ashjack.simukraftreloaded.blocks.functionality;
 
-import java.util.ArrayList;
-
 import ashjack.simukraftreloaded.entity.EntityAlignBeam;
 import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
+
+import java.util.ArrayList;
 
 public class Marker
 {

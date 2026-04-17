@@ -1,29 +1,9 @@
 package ashjack.simukraftreloaded.blocks;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import ashjack.simukraftreloaded.client.Gui.blocks.GuiWindmill;
-import ashjack.simukraftreloaded.common.jobs.Job;
-import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.IIcon;
-import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockWindmill extends BlockContainer {
 

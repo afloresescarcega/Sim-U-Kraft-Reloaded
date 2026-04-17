@@ -1,13 +1,9 @@
 package ashjack.simukraftreloaded.folk.genetics;
 
+import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
+
 import java.io.File;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
-import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
-import ashjack.simukraftreloaded.folk.traits.Trait;
-import ashjack.simukraftreloaded.folk.traits.Traits;
 
 public class Race implements Serializable
 {

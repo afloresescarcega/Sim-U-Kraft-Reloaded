@@ -1,26 +1,18 @@
 package ashjack.simukraftreloaded.common.jobs;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
-import ashjack.simukraftreloaded.common.jobs.Job.Vocation;
-import ashjack.simukraftreloaded.common.jobs.JobLivestockFarmer.Stage;
-import ashjack.simukraftreloaded.core.ModSimukraft;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.folk.FolkData;
 import ashjack.simukraftreloaded.folk.FolkData.FolkAction;
 import ashjack.simukraftreloaded.folk.FolkData.GotoMethod;
 import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
 import net.minecraft.entity.passive.EntityAnimal;
-import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.passive.EntityCow;
-import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.AxisAlignedBB;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 public class JobDairyFarmer extends Job {
 	

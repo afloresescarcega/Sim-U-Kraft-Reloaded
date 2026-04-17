@@ -1,7 +1,5 @@
 package ashjack.simukraftreloaded.folk.traits;
 
-import ashjack.simukraftreloaded.folk.traits.Trait;
-
 public class TraitReligious extends Trait
 {	
 	public TraitReligious() 

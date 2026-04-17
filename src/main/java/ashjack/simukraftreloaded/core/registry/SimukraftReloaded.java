@@ -1,19 +1,22 @@
 package ashjack.simukraftreloaded.core.registry;
 
-import java.io.BufferedOutputStream;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
+import ashjack.simukraftreloaded.blocks.functionality.FarmingBox;
+import ashjack.simukraftreloaded.blocks.functionality.MiningBox;
+import ashjack.simukraftreloaded.client.Gui.other.GuiRunMod;
+import ashjack.simukraftreloaded.common.CourierTask;
+import ashjack.simukraftreloaded.common.GameStates;
+import ashjack.simukraftreloaded.common.PricesForBlocks;
+import ashjack.simukraftreloaded.common.Relationship;
+import ashjack.simukraftreloaded.common.jobs.Job.Vocation;
+import ashjack.simukraftreloaded.common.jobs.JobSoldier;
+import ashjack.simukraftreloaded.core.ModSimukraft;
+import ashjack.simukraftreloaded.core.building.Building;
+import ashjack.simukraftreloaded.core.game.GameMode;
+import ashjack.simukraftreloaded.folk.FolkData;
+import ashjack.simukraftreloaded.proxies.ClientProxy;
+import ashjack.simukraftreloaded.proxies.CommonProxy.Commodity;
+import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
 import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
@@ -24,22 +27,17 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
-import ashjack.simukraftreloaded.blocks.functionality.FarmingBox;
-import ashjack.simukraftreloaded.blocks.functionality.MiningBox;
-import ashjack.simukraftreloaded.client.Gui.other.GuiRunMod;
-import ashjack.simukraftreloaded.common.CourierTask;
-import ashjack.simukraftreloaded.common.GameStates;
-import ashjack.simukraftreloaded.common.PricesForBlocks;
-import ashjack.simukraftreloaded.common.Relationship;
-import ashjack.simukraftreloaded.common.jobs.JobSoldier;
-import ashjack.simukraftreloaded.common.jobs.Job.Vocation;
-import ashjack.simukraftreloaded.core.ModSimukraft;
-import ashjack.simukraftreloaded.core.building.Building;
-import ashjack.simukraftreloaded.core.game.GameMode;
-import ashjack.simukraftreloaded.folk.FolkData;
-import ashjack.simukraftreloaded.proxies.ClientProxy;
-import ashjack.simukraftreloaded.proxies.CommonProxy.Commodity;
-import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
+
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.logging.Logger;
 
 public class SimukraftReloaded 
 {

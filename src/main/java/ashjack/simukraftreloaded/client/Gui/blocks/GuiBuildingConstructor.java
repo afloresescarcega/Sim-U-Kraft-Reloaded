@@ -1,29 +1,10 @@
 package ashjack.simukraftreloaded.client.Gui.blocks;
 
-import io.netty.buffer.ByteBuf;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-
-import net.minecraft.block.Block;
-import net.minecraft.client.entity.EntityClientPlayerMP;
-import net.minecraft.client.gui.GuiButton;
-import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.client.gui.GuiTextField;
-import net.minecraft.item.ItemStack;
-import net.minecraft.network.play.client.C17PacketCustomPayload;
-
-import org.lwjgl.input.Keyboard;
-import org.lwjgl.input.Mouse;
-
 import ashjack.simukraftreloaded.client.Gui.folk.GuiEmployFolk;
 import ashjack.simukraftreloaded.client.Gui.folk.GuiShowEmployees;
-import ashjack.simukraftreloaded.common.jobs.JobBuilder;
 import ashjack.simukraftreloaded.common.jobs.Job.Vocation;
+import ashjack.simukraftreloaded.common.jobs.JobBuilder;
 import ashjack.simukraftreloaded.common.jobs.JobBuilder.Stage;
-import ashjack.simukraftreloaded.core.ModSimukraft;
 import ashjack.simukraftreloaded.core.building.Building;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import ashjack.simukraftreloaded.folk.FolkData;
@@ -32,8 +13,17 @@ import ashjack.simukraftreloaded.packetsNEW.toServer.LoadBuildingPacket;
 import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.gui.GuiButton;
+import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.gui.GuiTextField;
+import net.minecraft.item.ItemStack;
+import org.lwjgl.input.Keyboard;
+import org.lwjgl.input.Mouse;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class GuiBuildingConstructor extends GuiScreen
 {

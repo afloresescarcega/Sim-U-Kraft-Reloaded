@@ -2,10 +2,7 @@ package ashjack.simukraftreloaded.entity;
 
 import ashjack.simukraftreloaded.blocks.BlockMarker;
 import ashjack.simukraftreloaded.blocks.functionality.Marker;
-import ashjack.simukraftreloaded.proxies.CommonProxy;
 import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;

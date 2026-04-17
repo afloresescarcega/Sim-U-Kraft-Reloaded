@@ -1,11 +1,5 @@
 package ashjack.simukraftreloaded.client;
 
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Random;
-
-import org.lwjgl.opengl.GL11;
-
 import ashjack.simukraftreloaded.entity.EntityConBox;
 import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
 import net.minecraft.client.Minecraft;
@@ -14,6 +8,10 @@ import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
+
+import java.util.Iterator;
+import java.util.Map;
 
 public class RenderConBox extends Render
 {

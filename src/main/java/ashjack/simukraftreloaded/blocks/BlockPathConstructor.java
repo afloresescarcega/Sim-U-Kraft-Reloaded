@@ -1,20 +1,8 @@
 package ashjack.simukraftreloaded.blocks;
 
-import java.util.ArrayList;
-
-import ashjack.simukraftreloaded.client.Gui.blocks.GuiBuildingConstructor;
-import ashjack.simukraftreloaded.client.Gui.blocks.GuiMining;
-import ashjack.simukraftreloaded.client.Gui.blocks.GuiPathBox;
-import ashjack.simukraftreloaded.core.registry.SimukraftReloadedTabs;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.Minecraft;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.IIcon;
-import net.minecraft.world.World;
 
 public class BlockPathConstructor extends Block
 {

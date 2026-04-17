@@ -1,18 +1,12 @@
 package ashjack.simukraftreloaded.common.jobs;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-
 import ashjack.simukraftreloaded.blocks.functionality.PathBox;
 import ashjack.simukraftreloaded.common.jobs.Job.Vocation;
 import ashjack.simukraftreloaded.common.jobs.JobMiner.Stage;
 import ashjack.simukraftreloaded.folk.FolkData;
-import ashjack.simukraftreloaded.folk.FolkData.FolkAction;
-import ashjack.simukraftreloaded.folk.FolkData.GotoMethod;
-import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
-import net.minecraft.block.Block;
 import net.minecraft.inventory.IInventory;
-import net.minecraft.item.ItemStack;
+
+import java.util.ArrayList;
 
 ////NOTE: this job was never implimented, was going to be a path/bridge building job.
 

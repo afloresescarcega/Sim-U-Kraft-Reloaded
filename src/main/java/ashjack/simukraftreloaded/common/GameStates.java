@@ -1,14 +1,11 @@
 package ashjack.simukraftreloaded.common;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.Serializable;
-import java.util.ArrayList;
-
 import ashjack.simukraftreloaded.core.ModSimukraft;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
-import cpw.mods.fml.relauncher.Side;
+
+import java.io.File;
+import java.io.Serializable;
+import java.util.ArrayList;
 
 // TODO: A lot of this is no longer used and should be removed
 

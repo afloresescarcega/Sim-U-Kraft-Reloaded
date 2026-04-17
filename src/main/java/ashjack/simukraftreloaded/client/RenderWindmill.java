@@ -1,18 +1,14 @@
 package ashjack.simukraftreloaded.client;
 
-import net.minecraft.client.renderer.entity.Render;
-import net.minecraft.entity.Entity;
-import net.minecraft.util.ResourceLocation;
-
-import org.lwjgl.opengl.GL11;
-
 import ashjack.simukraftreloaded.blocks.functionality.TileEntityWindmill;
 import ashjack.simukraftreloaded.common.jobs.Job;
-import ashjack.simukraftreloaded.core.ModSimukraft;
-import ashjack.simukraftreloaded.core.registry.SimukraftReloadedBlocks;
 import ashjack.simukraftreloaded.core.registry.SimukraftReloadedItems;
 import ashjack.simukraftreloaded.entity.EntityWindmill;
 import ashjack.simukraftreloaded.proxies.CommonProxy.V3;
+import net.minecraft.client.renderer.entity.Render;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
 
 public class RenderWindmill extends Render {
 
