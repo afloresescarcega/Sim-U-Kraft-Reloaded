@@ -9,6 +9,13 @@ pluginManagement {
     }
 }
 
+// Foojay resolver lets Gradle auto-download a matching JDK (Azul Zulu 8 here)
+// when no local install satisfies the toolchain spec — required on CI runners
+// that only ship Temurin.
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.8.0'
+}
+
 // Root project name is pinned so the Gradle project id matches
 // `archivesBaseName` regardless of the checkout directory name
 // (worktrees, forks, zip downloads, etc.).
