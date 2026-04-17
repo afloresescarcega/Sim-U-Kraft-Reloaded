@@ -366,7 +366,7 @@ public class GuiMerchant extends GuiScreen
                 {
                     Thread.sleep(3000);
                 }
-                catch (Exception e) {}
+                catch (InterruptedException e) { Thread.currentThread().interrupt(); return; }
 
                 mc.theWorld.playSound(mc.thePlayer.posX, mc.thePlayer.posY, mc.thePlayer.posZ, "ashjacksimukraftreloaded:merchm", 1f, 1f, false);
             }

@@ -203,7 +203,7 @@ public class GuiCourierTasks extends GuiScreen
                 int tidx = (Integer) tasks.get(guibutton.id);
                 String fn = "ct" + tidx + theFolk.name.replace(" ", "");
                 File file = new File(SimukraftReloaded.getSavesDataFolder() + "CourierTasks" + File.separator + fn + ".sk2");
-                file.delete();
+                if (!file.delete()) { SimukraftReloaded.log.warning("Could not delete " + file.getName()); }
                 SimukraftReloaded.theCourierTasks.remove(tidx);
                 buttonList.remove(guibutton.id);
                 initscreen();

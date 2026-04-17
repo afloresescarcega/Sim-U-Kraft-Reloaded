@@ -447,8 +447,6 @@ public class JobMiner extends Job implements Serializable
                         try {
 	                        Block block = id;
 	                        if (id != Blocks.air && id != Blocks.water
-	                                && id != Blocks.water
-	                                && id != Blocks.lava
 	                                && id != Blocks.lava
 	                                && !block.toString().toLowerCase().contains("oil"))
 	                        {
@@ -543,7 +541,7 @@ public class JobMiner extends Job implements Serializable
                                                              vMineable.y.intValue(),
                                                              vMineable.z.intValue());
                             
-                            if (ftb % 10==0 && btt==Math.floor(theMiningBox.size/2) && ltr==0) {
+                            if (ftb % 10==0 && btt==Math.floor(theMiningBox.size/2.0) && ltr==0) {
                             	V3 lightbox=vMineable.copy();
                             	
                             	if (mineHorizontalDir.contentEquals("+x"))
@@ -604,8 +602,6 @@ public class JobMiner extends Job implements Serializable
                         try {
 	                        Block block = id;
 	                        if (id != Blocks.air && id != Blocks.water
-	                                && id != Blocks.water
-	                                && id != Blocks.lava
 	                                && id != Blocks.lava
 	                        		&& !block.toString().toLowerCase().contains("oil"))
 	                        {
@@ -707,8 +703,10 @@ public class JobMiner extends Job implements Serializable
                     {
                         Thread.sleep(100);
                     }
-                    catch (Exception e)
+                    catch (InterruptedException e)
                     {
+                        Thread.currentThread().interrupt();
+                        return;
                     }
                 }
             }

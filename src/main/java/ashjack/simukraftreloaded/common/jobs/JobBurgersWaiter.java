@@ -127,7 +127,7 @@ public class JobBurgersWaiter extends Job {
 					is=new ItemStack(is.getItem(),1,is.getItemDamage());
 					inventoriesGet(theChests, is, false, true);
 					theFolk.statusText="Just sold "+is.getDisplayName();
-					int r=new Random().nextInt(SimukraftReloaded.theFolks.size()-1);
+					int r=SimukraftReloaded.RAND.nextInt(SimukraftReloaded.theFolks.size()-1);
 					FolkData folk=SimukraftReloaded.theFolks.get(r);
 					if (folk.levelFood<10) {folk.levelFood++;}
 					folk.saveThisFolk();

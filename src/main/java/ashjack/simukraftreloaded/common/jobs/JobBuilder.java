@@ -463,13 +463,13 @@ public class JobBuilder extends Job implements Serializable
                     }
                 }
 
-                if (blockId == SimukraftReloadedBlocks.livingBlock && theBuilding.type == "residential")
+                if (blockId == SimukraftReloadedBlocks.livingBlock && "residential".equals(theBuilding.type))
                 {
                     theBuilding.livingXYZ = new V3((double)(bx + xo), (double)(by + l),
                                                    (double)(bz + zo), theFolk.employedAt.theDimension);
                     blockId = null;
                     subtype = 0;
-                } else if (blockId==SimukraftReloadedBlocks.specialBlock && theBuilding.type != "residential") {
+                } else if (blockId==SimukraftReloadedBlocks.specialBlock && !"residential".equals(theBuilding.type)) {
                 	V3 v3=new V3((double)(bx + xo), (double)(by + l),(double)(bz + zo), theFolk.employedAt.theDimension);
                 	v3.meta=subtype;
                 	theBuilding.blockSpecial.add(v3);
@@ -504,7 +504,7 @@ public class JobBuilder extends Job implements Serializable
                 String want = "???";
                 ItemStack wantIS = new ItemStack(blockId, 1, 0);
 
-                if (wantIS != null && wantIS != null)
+                if (wantIS != null)
                 {
                     try
                     {
@@ -583,8 +583,7 @@ public class JobBuilder extends Job implements Serializable
                         if (blockId != null)
                         {
                             // provided blocks in hardcore mode     68=sign
-                            if (blockId == Blocks.grass || blockId == Blocks.water ||
-                                    blockId == Blocks.water || blockId == Blocks.lava
+                            if (blockId == Blocks.grass || blockId == Blocks.water
                                     || blockId == Blocks.lava || blockId == Blocks.wall_sign
                                     || blockId == Blocks.cake || blockId == Blocks.stone_slab
                                     || blockId == Blocks.wooden_slab || blockId == Blocks.double_wooden_slab
@@ -713,12 +712,12 @@ public class JobBuilder extends Job implements Serializable
                                 // spawn particles on client side
                                 if (mc.theWorld.isRemote)
                                 {
-                                    mc.theWorld.spawnParticle("explode", bx
-                                                              + xo, by + l, bz + zo, 0, 0.3f, 0);
-                                    mc.theWorld.spawnParticle("explode", bx
-                                                              + xo, by + l, bz + zo, 0, 0.2f, 0);
-                                    mc.theWorld.spawnParticle("explode", bx
-                                                              + xo, by + l, bz + zo, 0, 0.1f, 0);
+                                    mc.theWorld.spawnParticle("explode", (double)bx
+                                                              + xo, (double)by + l, (double)bz + zo, 0, 0.3f, 0);
+                                    mc.theWorld.spawnParticle("explode", (double)bx
+                                                              + xo, (double)by + l, (double)bz + zo, 0, 0.2f, 0);
+                                    mc.theWorld.spawnParticle("explode", (double)bx
+                                                              + xo, (double)by + l, (double)bz + zo, 0, 0.1f, 0);
                                 }
 
                                 if (blockId != null && GameMode.gameMode != GameMode.GAMEMODES.CREATIVE && blockId != SimukraftReloadedBlocks.livingBlock)
@@ -830,26 +829,15 @@ public class JobBuilder extends Job implements Serializable
          //       return;
             }
 
-            if (theBuilding != null)
-            {
-                theBuilding.buildingComplete = true;
-                SimukraftReloaded.sendChat(theFolk.name
-                                      + " has completed building a "
-                                      + theBuilding.displayNameWithoutPK);
-                ModSimukraft.proxy.getClientWorld().playSound(
-                    mc.thePlayer.posX, mc.thePlayer.posY,
-                    mc.thePlayer.posZ, "ashjacksimukraftreloaded:cash", 1f, 1f, false);
-                theBuilding.saveThisBuilding();
-                theFolk.theBuilding=null;
-            }
-            else
-            {
-            	SimukraftReloaded
-                .sendChat("Error: could not set the building that "
-                          + theFolk.name
-                          + " was building "
-                          + "to 'complete', try rebuilding right away (no cost) to try again");
-            }
+            theBuilding.buildingComplete = true;
+            SimukraftReloaded.sendChat(theFolk.name
+                                  + " has completed building a "
+                                  + theBuilding.displayNameWithoutPK);
+            ModSimukraft.proxy.getClientWorld().playSound(
+                mc.thePlayer.posX, mc.thePlayer.posY,
+                mc.thePlayer.posZ, "ashjacksimukraftreloaded:cash", 1f, 1f, false);
+            theBuilding.saveThisBuilding();
+            theFolk.theBuilding=null;
         }
 
         if (theFolk.theEntity != null)

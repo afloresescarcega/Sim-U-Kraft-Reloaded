@@ -328,7 +328,7 @@ public class JobGrocer extends Job implements Serializable
 
                         try
                         {
-                            int count = new Random().nextInt(3) + 1;
+                            int count = SimukraftReloaded.RAND.nextInt(3) + 1;
                             ItemFood food = (ItemFood) chestStack.getItem();
                             piece = inventoriesGet(grocerChests, new ItemStack(chestStack.getItem(), count), false,false); //grab 1 piece
                             FolkData folk = (FolkData) SimukraftReloaded.theFolks.get(f);

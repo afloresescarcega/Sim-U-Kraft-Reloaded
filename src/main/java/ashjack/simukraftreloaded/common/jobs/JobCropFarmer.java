@@ -608,7 +608,7 @@ public class JobCropFarmer extends Job implements Serializable
                         if (id != Blocks.dirt && id != Blocks.grass)
                         {
                             jobWorld.setBlock(xxx, yyy - 1, zzz, Blocks.dirt, 0, 0x03);
-                            jobWorld.playSound(xxx, yyy - 1, zzz,
+                            jobWorld.playSound(xxx, (double)yyy - 1, zzz,
                                                Blocks.grass.stepSound.getStepResourcePath(), 1.0f,
                                                1.0f, false);
                             hasTilled = true;
@@ -660,7 +660,7 @@ public class JobCropFarmer extends Job implements Serializable
                         {
                             jobWorld.setBlock(xxx, yyy - 1, zzz,
                                               Blocks.farmland, 0, 0x03);
-                            jobWorld.playSound(xxx, yyy - 1, zzz,
+                            jobWorld.playSound(xxx, (double)yyy - 1, zzz,
                                                Blocks.grass.stepSound.getStepResourcePath(), 1.0f,
                                                1.0f, false);
                             hasTilled = true;
@@ -973,7 +973,7 @@ public class JobCropFarmer extends Job implements Serializable
         }
         else if (step == 2)
         {
-            Random ra = new Random();
+            Random ra = SimukraftReloaded.RAND;
             int dist = theFolk.location.getDistanceTo(theFolk.employedAt);
 
             if (dist > 3)

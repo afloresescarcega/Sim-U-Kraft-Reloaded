@@ -205,7 +205,7 @@ public class ClientTickHandler
     {
     	
         Minecraft mc = Minecraft.getMinecraft();
-        Random random = new Random();
+        Random random = SimukraftReloaded.RAND;
         beamingPlayer.motionX = 0;
         beamingPlayer.motionY = 0;
         beamingPlayer.motionZ = 0;

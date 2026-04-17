@@ -32,7 +32,7 @@ public class Relationship implements Serializable
     public int theSubLevel = 0;
     public boolean isBloodRelation = false;
 
-    private Random rand = new Random();
+    private Random rand = SimukraftReloaded.RAND;
 
     public Relationship() {
     	//used by sk2 loader
@@ -708,7 +708,7 @@ public class Relationship implements Serializable
         }
 
         File f = new File(SimukraftReloaded.getSavesDataFolder() + "Folks" + File.separator + femaleFolk.name + ".sk2");
-        f.delete();
+        if (!f.delete()) { SimukraftReloaded.log.warning("Could not delete " + f.getName()); }
         String surname = maleFolk.name.substring(maleFolk.name.indexOf(" ") + 1).trim();
         int m = femaleFolk.name.indexOf(" ");
         femaleFolk.name = femaleFolk.name.substring(0, m).trim() + " " + surname;
@@ -930,7 +930,7 @@ public class Relationship implements Serializable
         }
         else
         {
-            Random r = new Random();
+            Random r = SimukraftReloaded.RAND;
             int rr = r.nextInt(5); //0 to 4
 
             if (rr == 0)

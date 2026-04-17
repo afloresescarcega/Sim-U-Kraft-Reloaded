@@ -146,7 +146,7 @@ public class MiningBox  implements Serializable
  	                    }
  	                    else
  	                    {
- 	                        f.delete();
+ 	                        if (!f.delete()) { SimukraftReloaded.log.warning("Could not delete " + f.getName()); }
  	                    }
                      }
  	            }
@@ -167,7 +167,7 @@ public class MiningBox  implements Serializable
 
                     if (theWorld == null)
                     {
-                        f.delete();
+                        if (!f.delete()) { SimukraftReloaded.log.warning("Could not delete " + f.getName()); }
                     }
                     else
                     {
@@ -181,7 +181,7 @@ public class MiningBox  implements Serializable
                             }
                             else
                             {
-                                f.delete();
+                                if (!f.delete()) { SimukraftReloaded.log.warning("Could not delete " + f.getName()); }
                             }
                         }
                         catch (Exception e)

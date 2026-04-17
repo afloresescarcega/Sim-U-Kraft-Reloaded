@@ -177,7 +177,7 @@ public class JobTerraformer extends Job
     private void stageInProgress()
     {
         theFolk.isWorking = true;
-        Random rand = new Random();
+        Random rand = SimukraftReloaded.RAND;
         boolean hasPlacedTree = false;
         ItemStack is = null;
         constructorChests = inventoriesFindClosest(theFolk.employedAt, 5);
@@ -337,7 +337,7 @@ public class JobTerraformer extends Job
                     }
                     else
                     {
-                        is = new ItemStack(Blocks.sapling, 1, new Random().nextInt(4));
+                        is = new ItemStack(Blocks.sapling, 1, SimukraftReloaded.RAND.nextInt(4));
                     }
                 }
             }
@@ -541,7 +541,6 @@ public class JobTerraformer extends Job
 
                     if (idBelow != null && idBelow != Blocks.ice &&
                             idBelow != Blocks.water &&
-                            idBelow != Blocks.water &&
                             idBelow != Blocks.snow)  //non-air block below (some type of ground
                     {
                         if (mc.theWorld.isRemote)
@@ -556,7 +555,7 @@ public class JobTerraformer extends Job
                         }
                     }
                 }
-                else if (blockId == Blocks.water || blockId == Blocks.water)
+                else if (blockId == Blocks.water)
                 {
                     if (mc.theWorld.isRemote)
                     {

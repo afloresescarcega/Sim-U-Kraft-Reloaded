@@ -158,7 +158,7 @@ public class EntityFolk extends EntityCreature implements INpc {
 
 			// // greet player
 			if (System.currentTimeMillis() - greetTimer > 1000) {
-				Random r = new Random();
+				Random r = SimukraftReloaded.RAND;
 				double dist = this.theData.getDistanceToPlayer();
 
 				if (SimukraftReloaded.states != null) {
@@ -670,7 +670,7 @@ public class EntityFolk extends EntityCreature implements INpc {
 
 	@Override
 	public int getTalkInterval() {
-		Random r = new Random();
+		Random r = SimukraftReloaded.RAND;
 		return 1000 + r.nextInt(1000);
 	}
 

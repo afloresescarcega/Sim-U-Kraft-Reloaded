@@ -131,7 +131,7 @@ public class JobDairyFarmer extends Job {
 	}
 	 
 	private void stageMilking() {
-		Random rand=new Random();
+		Random rand = SimukraftReloaded.RAND;
 		int c=rand.nextInt(6);
 		theFolk.statusText="Milking "+ cowNames[c] +" the cow";
 		theStage=Stage.STORINGMILK;

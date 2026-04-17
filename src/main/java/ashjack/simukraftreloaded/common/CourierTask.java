@@ -127,7 +127,7 @@ public class CourierTask implements Serializable
 	                }
 	                else
 	                {
-	                    f.delete();
+	                    if (!f.delete()) { SimukraftReloaded.log.warning("Could not delete " + f.getName()); }
 	                }
 	            }
 	        }
@@ -165,7 +165,7 @@ public class CourierTask implements Serializable
 	                }
 	                else
 	                {
-	                    f.delete();
+	                    if (!f.delete()) { SimukraftReloaded.log.warning("Could not delete " + f.getName()); }
 	                }
 	            }
 	        }
@@ -184,7 +184,7 @@ public class CourierTask implements Serializable
 	                }
 	                else
 	                {
-	                    f.delete();
+	                    if (!f.delete()) { SimukraftReloaded.log.warning("Could not delete " + f.getName()); }
 	                }
 	            }
 	        }
@@ -201,7 +201,7 @@ public class CourierTask implements Serializable
 	                }
 	                else
 	                {
-	                    f.delete();
+	                    if (!f.delete()) { SimukraftReloaded.log.warning("Could not delete " + f.getName()); }
 	                }
 	            }
 	        }
@@ -246,7 +246,7 @@ public class CourierTask implements Serializable
 	                    {
 	                        File fi = new File(SimukraftReloaded.getSavesDataFolder() + "CourierPoints"
 	                                           + File.separator + fn + ".sk2");
-	                        fi.delete();
+	                        if (!fi.delete()) { SimukraftReloaded.log.warning("Could not delete " + fi.getName()); }
 	                    }
 	                    catch (Exception e)
 	                    {

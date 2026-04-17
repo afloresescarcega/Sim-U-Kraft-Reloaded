@@ -31,7 +31,7 @@ public class RenderAlignBeam extends Render {
                 //GL11.glBindTexture(GL11.GL_TEXTURE_2D, texture);
                 this.renderManager.renderEngine.bindTexture(myTexture);
                 
-        Float s=1 - ( (float)Math.sin(System.currentTimeMillis()/50)/20); //pulsing beam
+        Float s=1 - ( (float)Math.sin(System.currentTimeMillis()/50.0)/20); //pulsing beam
         
         GL11.glPushMatrix();
         //GL11.glDisable(2896); //disable lighting
@@ -66,10 +66,10 @@ public class RenderAlignBeam extends Render {
                 tessellator.startDrawingQuads();
                 int j = fontrenderer.getStringWidth(s) / 2;
                 tessellator.setColorRGBA_F(1.0F, 0.0F, 0.0F, 0.25F); //red and partly transparent background color
-                tessellator.addVertex(-j - 1, -1D, 0.0D);
-                tessellator.addVertex(-j - 1, 8D, 0.0D);
-                tessellator.addVertex(j + 1, 8D, 0.0D);
-                tessellator.addVertex(j + 1, -1D, 0.0D);
+                tessellator.addVertex(-j - 1.0, -1D, 0.0D);
+                tessellator.addVertex(-j - 1.0, 8D, 0.0D);
+                tessellator.addVertex(j + 1.0, 8D, 0.0D);
+                tessellator.addVertex(j + 1.0, -1D, 0.0D);
                 tessellator.draw();
                 GL11.glEnable(3553 /* GL_TEXTURE_2D */);
                 fontrenderer.drawString(s, -fontrenderer.getStringWidth(s) / 2, 0, i);

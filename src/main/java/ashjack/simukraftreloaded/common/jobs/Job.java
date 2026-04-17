@@ -350,7 +350,7 @@ public abstract class Job
                     return null;
                 }
 
-                returnStack = chest.getStackInSlot(new Random().nextInt(slots.size()));
+                returnStack = chest.getStackInSlot(SimukraftReloaded.RAND.nextInt(slots.size()));
                 return returnStack;
             }
             else
@@ -443,7 +443,7 @@ public abstract class Job
                     return null;
                 }
 
-                returnStack = chest.getStackInSlot(new Random().nextInt(slots.size()));
+                returnStack = chest.getStackInSlot(SimukraftReloaded.RAND.nextInt(slots.size()));
                 return returnStack;
             }
             else
@@ -1339,16 +1339,16 @@ public abstract class Job
 
             if (b.displayName.toLowerCase().contains(searchWord.toLowerCase()))
             {
-            	if(shortestDist.primaryXYZ == null)
+            	if(shortestDist == null)
             	{
             		shortestDist = b;
             	}
-            	if(folk.location.getDistanceTo(shortestDist.primaryXYZ) < b.primaryXYZ.getDistanceTo(folk.location))
+            	else if(b.primaryXYZ.getDistanceTo(folk.location) < shortestDist.primaryXYZ.getDistanceTo(folk.location))
             	{
             		shortestDist = b;
             	}
             }
         }
-    	return shortestDist.primaryXYZ;
+    	return shortestDist == null ? null : shortestDist.primaryXYZ;
     }
 }

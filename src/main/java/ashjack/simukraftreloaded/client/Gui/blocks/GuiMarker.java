@@ -438,7 +438,7 @@ public class GuiMarker extends GuiScreen
                 }
 
                 out.close();
-                Thread.sleep(500);
+                try { Thread.sleep(500); } catch (InterruptedException ie) { Thread.currentThread().interrupt(); }
                 errorText = "Building copied and stored as 'My Build" + f + "' in Other buildings.";
                 mc.theWorld.playSoundEffect(location.x, location.y, location.z, "ashjacksimukraftreloaded:computer", 1f, 1f);
                 Building.initialiseAllBuildings();

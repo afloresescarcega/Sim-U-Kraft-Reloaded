@@ -988,7 +988,7 @@ public class Building implements Serializable
                     	
                     } else {  //no control block, building destroyed in world
                     	File f=new File(SimukraftReloaded.getSavesDataFolder() + "Buildings" + File.separator + xyz + ".sk2");
-                    	if (f.exists()) { f.delete(); }
+                    	if (f.exists() && !f.delete()) { SimukraftReloaded.log.warning("Could not delete " + f.getName()); }
                     }
 	            }
 	        }
@@ -1172,7 +1172,7 @@ public class Building implements Serializable
 	                    }
 	                    else
 	                    {
-	                        f.delete();
+	                        if (!f.delete()) { SimukraftReloaded.log.warning("Could not delete " + f.getName()); }
 	                        SimukraftReloaded.log.info("Building: Deleted building as id=" + id
 	                                         + " or dupe");
 	                    }
@@ -1300,7 +1300,7 @@ public class Building implements Serializable
             {
                 Thread.sleep(30);
             }
-            catch (Exception e) {}
+            catch (InterruptedException e) { Thread.currentThread().interrupt(); return; }
         }
        
     }

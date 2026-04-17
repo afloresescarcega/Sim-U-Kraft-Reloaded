@@ -31,7 +31,7 @@ public class Race implements Serializable
 	
 	public void setRaceName(String name)
 	{
-		name = this.raceName;
+		this.raceName = name;
 	}
 	
 	public String getRaceName()

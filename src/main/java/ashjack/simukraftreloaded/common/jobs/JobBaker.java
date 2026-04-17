@@ -282,7 +282,7 @@ public class JobBaker extends Job implements Serializable
         else if (step == 2)
         {
             int wheat = getInventoryCount(theFolk, Items.wheat);
-            int bread = (int) Math.floor(wheat / 3);
+            int bread = (int) Math.floor(wheat / 3.0);
             pay = (float)(bread * 0.20);
             bakeryChests = inventoriesFindClosest(theFolk.employedAt, 4);
 
@@ -351,7 +351,7 @@ public class JobBaker extends Job implements Serializable
 
             if (SimukraftReloaded.theFolks.size() > 1)
             {
-                sell = SimukraftReloaded.theFolks.size() + 1 + new Random().nextInt(SimukraftReloaded.theFolks.size());
+                sell = SimukraftReloaded.theFolks.size() + 1 + SimukraftReloaded.RAND.nextInt(SimukraftReloaded.theFolks.size());
                 bakeryChests = inventoriesFindClosest(theFolk.employedAt, 4);
                 breadStack = inventoriesGet(bakeryChests, new ItemStack(Items.bread, sell), false,false);
             }

@@ -97,7 +97,7 @@ public class EntityConBox extends Entity
 
     private void spawnExplosionParticle(Entity ent)
     {
-        Random rand = new Random();
+        Random rand = SimukraftReloaded.RAND;
 
         for (int var1 = 0; var1 < 20; ++var1)
         {

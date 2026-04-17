@@ -445,7 +445,7 @@ public class FarmingBox  implements Serializable
 	                    }
 	                    else
 	                    {
-	                        f.delete();
+	                        if (!f.delete()) { SimukraftReloaded.log.warning("Could not delete " + f.getName()); }
 	                    }
                     }
 	            }
@@ -466,7 +466,7 @@ public class FarmingBox  implements Serializable
 	
 	                    if (theWorld == null)
 	                    {
-	                        f.delete();
+	                        if (!f.delete()) { SimukraftReloaded.log.warning("Could not delete " + f.getName()); }
 	                    }
 	                    else
 	                    {
@@ -480,7 +480,7 @@ public class FarmingBox  implements Serializable
 	                            }
 	                            else
 	                            {
-	                                f.delete();
+	                                if (!f.delete()) { SimukraftReloaded.log.warning("Could not delete " + f.getName()); }
 	                            }
 	                        }
 	                        catch (Exception e)
@@ -491,7 +491,7 @@ public class FarmingBox  implements Serializable
 	                }
 	                else
 	                {
-	                    f.delete();
+	                    if (!f.delete()) { SimukraftReloaded.log.warning("Could not delete " + f.getName()); }
 	                    SimukraftReloaded.sendChat("One of your farming boxes had a problem with it, you may have to replace it");
 	                }
 	            }

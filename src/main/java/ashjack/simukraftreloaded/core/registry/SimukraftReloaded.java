@@ -42,6 +42,9 @@ import java.util.logging.Logger;
 public class SimukraftReloaded 
 {
 	public static Logger log = ClientProxy.log;
+
+	/** shared Random instance; reuse instead of allocating new Random per call */
+	public static final Random RAND = new Random();
 	
 	/** used to detect when we are in-world (not main menu) and when player changes worlds/maps */
     public static String currentSavePath = "";
@@ -117,14 +120,6 @@ public class SimukraftReloaded
         {
             states = new GameStates();
             states.saveStates();
-        }
-
-        if (states == null)
-        {
-            new File(getSavesDataFolder() + "settings.sk2").delete();
-            states = new GameStates();
-            states.saveStates();
-            sendChat("Your Sim-U-Kraft settings file was corrupted, I had to make a new one");
         }
 
         if (states.gameModeNumber == -1)
@@ -268,7 +263,7 @@ public class SimukraftReloaded
         	
             try
             {
-                Thread.sleep(15000);
+                try { Thread.sleep(15000); } catch (InterruptedException ie) { Thread.currentThread().interrupt(); return; }
                 File check = new File(getSimukraftFolder() + "/buildings/");
 
                 if (!check.exists())
@@ -449,7 +444,7 @@ public class SimukraftReloaded
 
             if (theFolks.size() > 1)
             {
-                Random rand = new Random();
+                Random rand = RAND;
                 int f1 = rand.nextInt(theFolks.size());
                 int f2 = f1;
 
@@ -471,7 +466,7 @@ public class SimukraftReloaded
 
             if (theFolks.size() > 1)
             {
-                Random rand = new Random();
+                Random rand = RAND;
                 int f1 = rand.nextInt(theFolks.size());
                 int f2 = f1;
 
@@ -504,7 +499,7 @@ public class SimukraftReloaded
         }
 
         FolkData folk;
-        Random rand = new Random();
+        Random rand = RAND;
         log.info("evolving folks");
         //collect rent
         Thread t = new Thread(new Runnable()
@@ -516,7 +511,7 @@ public class SimukraftReloaded
                 {
                     Thread.sleep(3000);
                 }
-                catch (Exception e) {}
+                catch (InterruptedException e) { Thread.currentThread().interrupt(); return; }
 
                 float totalRent = 0f;
                 float totalCorpTax = 0f;
@@ -705,7 +700,7 @@ public class SimukraftReloaded
             try
             {
             	block = Block.getBlockFromName(blockLoc.name);
-            	block.dropBlockAsItem(demolishWorld, blockLoc.x.intValue(), blockLoc.y.intValue() + 10 + new Random().nextInt(20), blockLoc.z.intValue()
+            	block.dropBlockAsItem(demolishWorld, blockLoc.x.intValue(), blockLoc.y.intValue() + 10 + RAND.nextInt(20), blockLoc.z.intValue()
                                       , 0, 0);
                 demolishBlocks.remove(0);
             }

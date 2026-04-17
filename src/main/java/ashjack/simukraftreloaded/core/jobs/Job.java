@@ -48,20 +48,20 @@ public class Job implements Serializable
         		String[] jobFileLine = strLine.split("=");
         	
         		/*Job Name (name)*/
-        		if(jobFileLine[0] == "Name")
+        		if("Name".equals(jobFileLine[0]))
         		{
         			displayName = jobFileLine[1];
         		}
             
         		/*Job Building (building)*/
-        		if(jobFileLine[0] == "Building")
+        		if("Building".equals(jobFileLine[0]))
         		{
         			jobBuildingName = jobFileLine[1];
         			jobBuilding = Building.getBuildingBySearch(jobBuildingName);
         		}
             
         		/*Should the folk work overnight? (WorkAtNight)*/
-        		if(jobFileLine[0] == "WorkAtNight")
+        		if("WorkAtNight".equals(jobFileLine[0]))
         		{
         			if(Byte.parseByte(jobFileLine[1])==0)
             		{
@@ -79,7 +79,7 @@ public class Job implements Serializable
         		}        		
             
         		/*Should the folk work during the day? (WorkAtDay)*/
-        		if(jobFileLine[0] == "WorkAtNight")
+        		if("WorkAtDay".equals(jobFileLine[0]))
         		{
         			if(Byte.parseByte(jobFileLine[1])==0)
             		{
@@ -103,7 +103,7 @@ public class Job implements Serializable
         		
             
         		/*Should the folk work even when pregnant? (IgnorePregnancy)*/
-        		if(jobFileLine[0] == "IgnorePregnancy")
+        		if("IgnorePregnancy".equals(jobFileLine[0]))
         		{
         			if(Byte.parseByte(jobFileLine[1])==0)
             		{

@@ -127,7 +127,7 @@ private void stageCollectingEggs() {
 }
 
 private void stageStoringEggs() {
-	Random rand=new Random();
+	Random rand = SimukraftReloaded.RAND;
 	int c=rand.nextInt(7);
 	theFolk.statusText="Storing Eggs in refrigerated chest";
 	theFolk.isWorking=false;

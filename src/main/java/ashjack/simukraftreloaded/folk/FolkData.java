@@ -204,7 +204,7 @@ public class FolkData implements Serializable
     /** create a new folk with random name, skin etc and drop into arrayList */
     public FolkData(World theWorld)
     {
-        Random rand = new Random();
+        Random rand = SimukraftReloaded.RAND;
         this.gender = rand.nextInt(2);
         this.name = generateName(gender, false, "");
         this.age = 18;
@@ -241,7 +241,7 @@ public class FolkData implements Serializable
     
     public FolkData(World theWorld, String theName)
     {
-        Random rand = new Random();
+        Random rand = SimukraftReloaded.RAND;
         this.gender = rand.nextInt(2);
         this.name = theName;
         this.age = 18;
@@ -279,7 +279,7 @@ public class FolkData implements Serializable
     /** spawn a brand-new child into the world, passes back reference folkData */
     public FolkData(World theWorld, FolkData mother, FolkData father)
     {
-        Random rand = new Random();
+        Random rand = SimukraftReloaded.RAND;
         String surname = "Unknown";
         
         generateTraits();
@@ -433,7 +433,7 @@ public class FolkData implements Serializable
     /** update loop for this folk, gets called inDirectly and frequently from CommonTickHandler's inGameTick */
     public void onUpdate()
     {
-        Random rand = new Random();
+        Random rand = SimukraftReloaded.RAND;
         Long now = System.currentTimeMillis();
         
         
@@ -672,7 +672,7 @@ public class FolkData implements Serializable
         ///////// ONCE A SECOND TASKS
         if (now - timeSinceLastStatusUpdate > 1000)
         {
-        	if(this.trait1 == "" || this.trait2 == "" || this.trait3 == "" || this.trait4 == "")
+        	if("".equals(this.trait1) || "".equals(this.trait2) || "".equals(this.trait3) || "".equals(this.trait4))
             {
         		generateTraits();
             }
@@ -777,7 +777,7 @@ public class FolkData implements Serializable
             {
                 isWorking = false;
 
-                if (new Random().nextInt(4) == 1)
+                if (SimukraftReloaded.RAND.nextInt(4) == 1)
                 {
                     this.statusText = "Staying Home";
                     action = FolkAction.STAYINGHOME;
@@ -1116,7 +1116,7 @@ public class FolkData implements Serializable
                 status1 = "";
             }
         }
-        Random rand = new Random();
+        Random rand = SimukraftReloaded.RAND;
         
 
         if (this.getHome() != null)
@@ -1327,7 +1327,7 @@ public class FolkData implements Serializable
     /** random name generator for folks - ensures name doesn't exist in this world */
     public static String generateName(int gender, boolean firstNameOnly, String lastNameOptional)
     {
-        Random randomGenerator = new Random();
+        Random randomGenerator = SimukraftReloaded.RAND;
         String firstName = "", lastName = "";
         int i;
         FolkData test = null;
@@ -1727,7 +1727,7 @@ public class FolkData implements Serializable
             return;
         }
 
-        Random random = new Random();
+        Random random = SimukraftReloaded.RAND;
         Double d4 = ((double) random.nextFloat() - 2D) * 2D;
         this.stayPut = true;
         if(!MinecraftServer.getServer().isDedicatedServer())
@@ -1931,7 +1931,7 @@ public class FolkData implements Serializable
 	                }
 	                else
 	                {
-	                    f.delete();
+	                    if (!f.delete()) { SimukraftReloaded.log.warning("Could not delete " + f.getName()); }
 	                }
 	            }
 	        }
@@ -2296,7 +2296,7 @@ public class FolkData implements Serializable
 
         if (deathBy.contentEquals(""))
         {
-            Random r = new Random();
+            Random r = SimukraftReloaded.RAND;
             int ded = r.nextInt(6);
 
             if (ded == 0)
@@ -2370,7 +2370,7 @@ public class FolkData implements Serializable
                         String fn = rel.folk1.name.replaceAll(" ", "") + rel.folk2.name.replaceAll(" ", "");
                         File f = new File(SimukraftReloaded.getSavesDataFolder() + "Relationships" + File.separator
                                           + fn + ".sk2");
-                        f.delete();
+                        if (!f.delete()) { SimukraftReloaded.log.warning("Could not delete " + f.getName()); }
                         SimukraftReloaded.theRelationships.remove(q);
                     }
                 }
@@ -2381,7 +2381,7 @@ public class FolkData implements Serializable
             }
 
             File f = new File(SimukraftReloaded.getSavesDataFolder() + "folks" + File.separator + this.name + ".sk2");
-            f.delete();
+            if (!f.delete()) { SimukraftReloaded.log.warning("Could not delete " + f.getName()); }
 
             if (i >= 0)
             {
@@ -2539,7 +2539,7 @@ public class FolkData implements Serializable
     
     public void generateTraits()
     {
-    	Random rand = new Random();
+    	Random rand = SimukraftReloaded.RAND;
     	//Trait 1
         this.trait1 = Traits.traitList[rand.nextInt(Traits.traitList.length-1)].traitName;
         
@@ -2547,7 +2547,7 @@ public class FolkData implements Serializable
         //Trait 2
     	this.trait2 = Traits.traitList[rand.nextInt(Traits.traitList.length-1)].traitName;
     	
-    	while(this.trait2 == this.trait1 || this.traitHasOpposite(trait2))
+    	while(this.trait2.equals(this.trait1) || this.traitHasOpposite(trait2))
     	{
     		this.trait2 = Traits.traitList[rand.nextInt(Traits.traitList.length-1)].traitName;
     	}
@@ -2556,7 +2556,7 @@ public class FolkData implements Serializable
     	//Trait 3
     	this.trait3 = Traits.traitList[rand.nextInt(Traits.traitList.length-1)].traitName;
     	
-    	while(this.trait3 == this.trait2 || this.trait3 == this.trait1 || this.traitHasOpposite(trait3))
+    	while(this.trait3.equals(this.trait2) || this.trait3.equals(this.trait1) || this.traitHasOpposite(trait3))
     	{
     		this.trait3 = Traits.traitList[rand.nextInt(Traits.traitList.length-1)].traitName;
     	}
@@ -2565,7 +2565,7 @@ public class FolkData implements Serializable
     	//Trait 4
     	this.trait4 = Traits.traitList[rand.nextInt(Traits.traitList.length-1)].traitName;
     	
-    	while(this.trait4 == this.trait1 || this.trait4 == this.trait2 || this.trait4 == this.trait3 || this.traitHasOpposite(trait4))
+    	while(this.trait4.equals(this.trait1) || this.trait4.equals(this.trait2) || this.trait4.equals(this.trait3) || this.traitHasOpposite(trait4))
     	{
     		this.trait4 = Traits.traitList[rand.nextInt(Traits.traitList.length-1)].traitName;
     	}

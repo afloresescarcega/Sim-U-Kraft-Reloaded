@@ -254,7 +254,7 @@ public class GuiBuildingConstructor extends GuiScreen
     
     private void displayReq(String block, int qty, int y)
     {
-        double stacks = Math.floor(qty / 64);
+        double stacks = Math.floor(qty / 64.0);
         drawString(fontRendererObj, qty + "", 90, y, 0xffffff);
         drawString(fontRendererObj, "x", 125, y, 0xffffff);
         drawString(fontRendererObj, block, 150, y, 0xffffff);

@@ -1,5 +1,6 @@
 package ashjack.simukraftreloaded.common;
 
+import ashjack.simukraftreloaded.core.registry.SimukraftReloaded;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 
@@ -185,7 +186,7 @@ public class PricesForBlocks implements Serializable
         /// after buying the price goes up
         /// make sure logs are 4 x planks
         /// min= 0.012     max=0.990
-        Random r = new Random();
+        Random r = SimukraftReloaded.RAND;
         float cprice;
 
         if (afterBuying)

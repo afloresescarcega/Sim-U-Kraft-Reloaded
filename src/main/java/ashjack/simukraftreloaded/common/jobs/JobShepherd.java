@@ -117,7 +117,7 @@ public class JobShepherd extends Job implements Serializable
 
     private void stageWaiting()
     {
-        Random rand = new Random();
+        Random rand = SimukraftReloaded.RAND;
         theFolk.isWorking = false;
         theFolk.statusText = "Sharpening Shears";
         theFolk.stayPut = false;
@@ -211,7 +211,7 @@ public class JobShepherd extends Job implements Serializable
                             {
                                 Thread.sleep(150);
                             }
-                            catch (Exception e) {}
+                            catch (InterruptedException e) { Thread.currentThread().interrupt(); return; }
                         }
 
                         isShearing = false;
@@ -225,7 +225,7 @@ public class JobShepherd extends Job implements Serializable
         }
         else if (step == 4)
         {
-            Random ra = new Random();
+            Random ra = SimukraftReloaded.RAND;
             int count = ra.nextInt(3) + 1; // 1 to 3
             placeWoolIntoAChest(sheepToShear.getFleeceColor(), count);
             theStage = Stage.WAITINGFORWOOL;
@@ -236,7 +236,7 @@ public class JobShepherd extends Job implements Serializable
 
     public void spawnExplosionParticle(Entity ent)
     {
-        Random rand = new Random();
+        Random rand = SimukraftReloaded.RAND;
 
         for (int var1 = 0; var1 < 20; ++var1)
         {
@@ -273,7 +273,7 @@ public class JobShepherd extends Job implements Serializable
                         controlBox.x, controlBox.y, controlBox.z, controlBox.x + 1.0D, controlBox.y + 1.0D,
                         controlBox.z + 1.0D).expand(3D, 2D, 3D));//look within the pen
 
-        Random ra = new Random();
+        Random ra = SimukraftReloaded.RAND;
         EntitySheep sheep;
 
         if (list.size() > 0 && list.size() < 6)

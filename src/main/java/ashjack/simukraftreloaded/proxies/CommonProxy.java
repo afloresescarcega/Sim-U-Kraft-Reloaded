@@ -77,7 +77,7 @@ public class CommonProxy
                 setupAvailableItems();
             }
 
-            Random rand = new Random();
+            Random rand = SimukraftReloaded.RAND;
             SimukraftReloaded.theCommodities.clear();
             int count = rand.nextInt(3) + 2;
 

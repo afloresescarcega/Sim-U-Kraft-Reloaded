@@ -298,7 +298,7 @@ public class JobLumberjack extends Job implements Serializable
                                 {
                                     Thread.sleep(100);
                                 }
-                                catch (Exception e) {}
+                                catch (InterruptedException e) { Thread.currentThread().interrupt(); return; }
 
                                 theFolk.theEntity.swingProgress = 0.7f;
 
@@ -306,7 +306,7 @@ public class JobLumberjack extends Job implements Serializable
                                 {
                                     Thread.sleep(100);
                                 }
-                                catch (Exception e) {}
+                                catch (InterruptedException e) { Thread.currentThread().interrupt(); return; }
                             }
                         }
 

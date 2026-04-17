@@ -114,10 +114,10 @@ public class RenderFolk extends RenderBiped
         tessellator.startDrawingQuads();
         int j = fontrenderer.getStringWidth(s) / 2;
         tessellator.setColorRGBA_F(0.0F, 0.0F, 0.0F, 0.25F);
-        tessellator.addVertex(-j - 1, -1D, 0.0D);
-        tessellator.addVertex(-j - 1, 8D, 0.0D);
-        tessellator.addVertex(j + 1, 8D, 0.0D);
-        tessellator.addVertex(j + 1, -1D, 0.0D);
+        tessellator.addVertex(-j - 1.0, -1D, 0.0D);
+        tessellator.addVertex(-j - 1.0, 8D, 0.0D);
+        tessellator.addVertex(j + 1.0, 8D, 0.0D);
+        tessellator.addVertex(j + 1.0, -1D, 0.0D);
         tessellator.draw();
         GL11.glEnable(GL11.GL_TEXTURE_2D);
         fontrenderer.drawString(s, -fontrenderer.getStringWidth(s) / 2, 0, i);

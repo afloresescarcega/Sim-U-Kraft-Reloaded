@@ -246,7 +246,7 @@ public class JobLivestockFarmer extends Job implements Serializable
 
     private void stageSlaughtering()
     {
-        Random rand = new Random();
+        Random rand = SimukraftReloaded.RAND;
         theFolk.statusText = "Off with their head!";
 
         //mc.theWorld.playSound(redShirt.posX,redShirt.posY,redShirt.posZ, redShirt. getHurtSound(), 1f, 1f);
@@ -297,7 +297,7 @@ public class JobLivestockFarmer extends Job implements Serializable
     private void procreate(EntityAnimal parentAnimal, V3 pos)
     {
         EntityAgeable babyAnimal = parentAnimal.createChild(parentAnimal);
-        Random rand = new Random();
+        Random rand = SimukraftReloaded.RAND;
 
         if (babyAnimal != null)
         {

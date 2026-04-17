@@ -65,7 +65,7 @@ public class JobFisherman extends Job implements Serializable
 
         if (theStage == Stage.CAUGHTFISH)
         {
-            runDelay = 20000 + new Random().nextInt(20000);
+            runDelay = 20000 + SimukraftReloaded.RAND.nextInt(20000);
         }
         else
         {
